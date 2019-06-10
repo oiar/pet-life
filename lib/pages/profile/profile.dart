@@ -114,8 +114,7 @@ import 'package:path_provider/path_provider.dart';
 
 import 'data.dart';
 
-const api =
-    'https://firebasestorage.googleapis.com/v0/b/playground-a753d.appspot.com/o';
+const api = 'https://firebasestorage.googleapis.com/v0/b/playground-a753d.appspot.com/o';
 
 enum AppTheme { candy, cocktail }
 
@@ -182,7 +181,7 @@ class Screen extends State<ProfileScreen> {
       var file = _getLocalImageFile(name, dir);
       return Image.file(file);
     }
-    return Image.asset('assets/images/$name');
+    return Image.asset('lib/assets/images/$name');
   }
 
   File _getLocalImageFile(String name, String dir) => File('$dir/$name');
