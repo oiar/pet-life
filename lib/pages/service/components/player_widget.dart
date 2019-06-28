@@ -75,17 +75,17 @@ class _PlayerWidgetState extends State<PlayerWidget> {
                 onPressed: _isPlaying ? null : () => _play(),
                 iconSize: 64.0,
                 icon: new Icon(Icons.play_arrow),
-                color: Colors.cyan),
+                color: Colors.cyan[200]),
             new IconButton(
                 onPressed: _isPlaying ? () => _pause() : null,
                 iconSize: 64.0,
                 icon: new Icon(Icons.pause),
-                color: Colors.cyan),
+                color: Colors.cyan[200]),
             new IconButton(
                 onPressed: _isPlaying || _isPaused ? () => _stop() : null,
                 iconSize: 64.0,
                 icon: new Icon(Icons.stop),
-                color: Colors.cyan),
+                color: Colors.cyan[200]),
           ],
         ),
         new Row(
@@ -106,7 +106,7 @@ class _PlayerWidgetState extends State<PlayerWidget> {
                             _position.inMilliseconds < _duration.inMilliseconds)
                         ? _position.inMilliseconds / _duration.inMilliseconds
                         : 0.0,
-                    valueColor: new AlwaysStoppedAnimation(Colors.cyan),
+                    valueColor: new AlwaysStoppedAnimation(Colors.cyan[200]),
                   ),
                 ],
               ),
@@ -119,7 +119,7 @@ class _PlayerWidgetState extends State<PlayerWidget> {
             ),
           ],
         ),
-        new Text("State: $_audioPlayerState")
+        // new Text("State: $_audioPlayerState")
       ],
     );
   }
