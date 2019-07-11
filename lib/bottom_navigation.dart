@@ -1,7 +1,23 @@
 import 'package:flutter/material.dart';
+import 'pages/service/components/article.dart';
 import 'pages/profile/profile.dart';
 import 'pages/schedule/schedule.dart';
 import 'pages/service/service.dart';
+
+class BottomNavigation extends StatelessWidget {
+  @override 
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      home: BottomNavigationWidget(),
+      routes: {
+        '/service': (BuildContext context) => ServiceScreen(),
+        '/schedule': (BuildContext context) => ScheduleScreen(),
+        '/profile': (BuildContext context) => ProfileScreen(),
+        '/article': (BuildContext context) => ArticleScreen(),
+      }
+    );
+  }
+}
 
 class BottomNavigationWidget extends StatefulWidget {
   @override
@@ -17,7 +33,7 @@ class BottomNavigationWidgetState extends State<BottomNavigationWidget> {
     list
       ..add(ServiceScreen())
       ..add(ScheduleScreen())
-      ..add(CurrentPage());
+      ..add(ProfileScreen());
     super.initState();
   }
 

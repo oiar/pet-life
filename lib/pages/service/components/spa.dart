@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_app/pages/service/components/article.dart';
 
 class SpaScreen extends StatefulWidget {
   @override
@@ -8,8 +9,8 @@ class SpaScreen extends StatefulWidget {
 class Screen extends State<SpaScreen> {
   @override
   Widget build(BuildContext context) {
-    return new Scrollbar(
-      child: new SingleChildScrollView(
+    return Scrollbar(
+      child: SingleChildScrollView(
         child: Container(
           child: Column(
             children: <Widget>[
@@ -17,7 +18,7 @@ class Screen extends State<SpaScreen> {
                 mainAxisAlignment: MainAxisAlignment.start,
                 children: <Widget>[
                   Container(
-                    child: Text('Near Your Location', style: TextStyle(fontSize: 20)),
+                    child: Text('Near Your Location', style: TextStyle(fontSize: 20.0)),
                     margin: EdgeInsets.only(bottom: 16.0, top: 10.0, left: 16.0),
                   )
                 ],
@@ -27,37 +28,42 @@ class Screen extends State<SpaScreen> {
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.start,
                   children: <Widget>[
-                    Card(
-                      margin: EdgeInsets.only(right: 8.0, bottom: 8.0, left: 16.0),
-                      elevation: 5.0,
-                      shape: const RoundedRectangleBorder(borderRadius: BorderRadius.all(Radius.circular(14.0))),
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Container(
-                            width: 280,
-                            height: 150,
-                            decoration: BoxDecoration(
-                              borderRadius: BorderRadius.only(
-                                topLeft: Radius.circular(14.0),
-                                topRight: Radius.circular(14.0)
-                              ),
-                              image: DecorationImage(
-                                image: NetworkImage('http://www.myhomedecor.org/wp-content/uploads/Mini-DIY-Bed-for-lovely-pets-616x350.jpg'),
-                                fit: BoxFit.cover
+                    GestureDetector(
+                      onTap: () {
+                        Navigator.pushNamed(context, '/article');
+                      },
+                      child: Card(
+                        margin: EdgeInsets.only(right: 8.0, bottom: 8.0, left: 16.0),
+                        elevation: 5.0,
+                        shape: const RoundedRectangleBorder(borderRadius: BorderRadius.all(Radius.circular(14.0))),
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Container(
+                              width: 280,
+                              height: 150,
+                              decoration: BoxDecoration(
+                                borderRadius: BorderRadius.only(
+                                  topLeft: Radius.circular(14.0),
+                                  topRight: Radius.circular(14.0)
+                                ),
+                                image: DecorationImage(
+                                  image: NetworkImage('http://s3img.city.sina.com.cn/xiancheng/common/thumbnail/0/21b3f53872990991ba229acb4dc4ffc5.jpg'),
+                                  fit: BoxFit.cover
+                                ),
                               ),
                             ),
-                          ),
-                          Container(
-                            margin: EdgeInsets.only(top: 12.0, left: 16.0, right: 16.0, bottom: 8.0),
-                            child: new Text('Lovely Pet', style: TextStyle(fontSize: 20)),
-                          ),
-                          Container(
-                            margin: EdgeInsets.only(bottom: 16.0, left: 16.0, right: 16.0),
-                            child: new Text('123 Avenue Street, City'),
-                          ),
-                        ],
-                      ),
+                            Container(
+                              margin: EdgeInsets.only(top: 12.0, left: 16.0, right: 16.0, bottom: 8.0),
+                              child: new Text('Lovely Pet', style: TextStyle(fontSize: 20)),
+                            ),
+                            Container(
+                              margin: EdgeInsets.only(bottom: 16.0, left: 16.0, right: 16.0),
+                              child: new Text('123 Avenue Street, City'),
+                            ),
+                          ],
+                        ),
+                      )
                     ),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.center,
@@ -78,7 +84,7 @@ class Screen extends State<SpaScreen> {
                                     topRight: Radius.circular(14.0)
                                   ),
                                   image: DecorationImage(
-                                    image: NetworkImage('http://s3img.city.sina.com.cn/xiancheng/common/thumbnail/0/21b3f53872990991ba229acb4dc4ffc5.jpg'),
+                                    image: NetworkImage('http://www.myhomedecor.org/wp-content/uploads/Mini-DIY-Bed-for-lovely-pets-616x350.jpg'),
                                     fit: BoxFit.cover
                                   ),
                                 ),

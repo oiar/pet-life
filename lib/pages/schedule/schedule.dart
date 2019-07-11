@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'components/bottom_sheet.dart';
 import 'components/calendar_carousel.dart';
+import 'package:flutter_app/bottom_navigation.dart';
 
 class ScheduleScreen extends StatefulWidget {
   @override
@@ -20,6 +21,7 @@ class Screen extends State<ScheduleScreen> {
         //   )
         // ),
         child: Scaffold(
+          // bottomNavigationBar: BottomNavigationWidget(),
           backgroundColor: Colors.transparent,
           appBar: AppBar(
             backgroundColor: Colors.transparent,

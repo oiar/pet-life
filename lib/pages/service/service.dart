@@ -11,36 +11,34 @@ class ServiceScreen extends StatefulWidget {
 class Screen extends State<ServiceScreen> {
   @override
   Widget build(BuildContext context) {
-    return new MaterialApp(
-      home: new DefaultTabController(
-        length: choices.length,
-        child: new Scaffold(
+    return DefaultTabController(
+      length: choices.length,
+      child: Scaffold(
+        backgroundColor: Colors.transparent,
+        appBar: new AppBar(
           backgroundColor: Colors.transparent,
-          appBar: new AppBar(
-            backgroundColor: Colors.transparent,
-            elevation: 0,
-            title: new Text('Service', style: new TextStyle(fontWeight: FontWeight.bold, color: Colors.white, fontSize: 32.0)),
-            bottom: new TabBar(
-              indicatorColor: Colors.white,
-              labelColor: Colors.white,
-              isScrollable: true,
-              tabs: choices.map((Choice choice) {
-                return new Tab(
-                  text: choice.title,
-                  icon: new Icon(choice.icon, color: Colors.white, size: 32),
-                );
-              }).toList(),
-            ),
-          ),
-          body: new TabBarView(
-            children: <Widget>[
-              SpaScreen(),
-              HotelScreen(),
-              FoodScreen(),
-            ],
+          elevation: 0,
+          title: new Text('Service', style: new TextStyle(fontWeight: FontWeight.bold, color: Colors.white, fontSize: 32.0)),
+          bottom: new TabBar(
+            indicatorColor: Colors.white,
+            labelColor: Colors.white,
+            isScrollable: true,
+            tabs: choices.map((Choice choice) {
+              return new Tab(
+                text: choice.title,
+                icon: new Icon(choice.icon, color: Colors.white, size: 32),
+              );
+            }).toList(),
           ),
         ),
-      ),
+        body: new TabBarView(
+          children: <Widget>[
+            SpaScreen(),
+            HotelScreen(),
+            FoodScreen(),
+          ],
+        ),
+      ), 
     );
   }
 }
@@ -56,3 +54,4 @@ const List<Choice> choices = const <Choice>[
   const Choice(title: 'Hotel', icon: Icons.location_city),
   const Choice(title: 'Food', icon: Icons.fastfood)
 ];
+
