@@ -17,6 +17,7 @@ environment:
   sdk: ">=2.2.0 <3.0.0"
 
 dependencies:
+  flutter_map:
   audioplayers: ^0.12.1
   archive: ^2.0.8
   path_provider: ^1.1.0

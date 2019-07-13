@@ -77,6 +77,7 @@ class Screen extends State<IconBottomSheet> {
                 Container(
                   margin: EdgeInsets.only(top: 8.0),
                   child: DateTimePickerFormField(
+                    controller: TextEditingController(),
                     textAlign: TextAlign.center,
                     onChanged: (dt) => setState(() => date = dt),
                     inputType: InputType.time,

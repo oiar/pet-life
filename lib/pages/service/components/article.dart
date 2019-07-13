@@ -1,4 +1,7 @@
+import 'dart:async';
 import 'package:flutter/material.dart';
+import 'package:flutter_map/flutter_map.dart';
+import 'package:latlong/latlong.dart';
 
 class ArticleScreen extends StatefulWidget {
   @override
@@ -12,10 +15,6 @@ class Screen extends State<ArticleScreen> {
     final width = size.width;
     final height = size.height; 
     return Scaffold(
-      // appBar: AppBar(
-      //   backgroundColor: Colors.transparent,
-      //   elevation: 0,
-      // ),
       backgroundColor: Color(0xFFFEF1D4),
       body: Scrollbar(
         child: SingleChildScrollView(
@@ -137,21 +136,51 @@ class Screen extends State<ArticleScreen> {
                 shape: const RoundedRectangleBorder(borderRadius: BorderRadius.all(Radius.circular(14.0))),
                 child: Container(
                   width: width * 12 / 13,
-                  padding: EdgeInsets.all(16.0),
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: <Widget>[
                       Row(
-                          children: [
-                            Container(
-                              child: Text('Service', style: TextStyle(fontSize: 20.0),),
+                        children: [
+                          Container(
+                            padding: EdgeInsets.all(16.0),
+                            child: Text('Location', style: TextStyle(fontSize: 20.0),),
+                          ),
+                          Container(
+                            margin: EdgeInsets.only(left: 220.0),
+                            child: Icon(Icons.search, size: 32.0, color: Color(0xFF646465)),
+                          )
+                        ]
+                      ),
+                      SizedBox(
+                        height: 300,
+                        child: FlutterMap(
+                          options: new MapOptions(
+                            center: LatLng(51.5, -0.09),
+                            zoom: 13.0,
+                          ),
+                          layers: [
+                            new TileLayerOptions(
+                              urlTemplate: "https://api.mapbox.com/styles/v1/oiar/cjxzxij1c0sks1cp9umiqujji/tiles/256/{z}/{x}/{y}@2x?access_token=pk.eyJ1Ijoib2lhciIsImEiOiJjanh6dHF2bWkwNnAxM2JsYnEwYTgxM3g2In0.Zaiik1gIW6jntv0D1c_L-w",
+                              additionalOptions: {
+                                'accessToken': 'https://api.mapbox.com/styles/v1/oiar/cjxzxij1c0sks1cp9umiqujji/tiles/256/{z}/{x}/{y}@2x?access_token=pk.eyJ1Ijoib2lhciIsImEiOiJjanh6dHF2bWkwNnAxM2JsYnEwYTgxM3g2In0.Zaiik1gIW6jntv0D1c_L-w',
+                              },
                             ),
-                            Container(
-                              margin: EdgeInsets.only(left: 240.0),
-                              child: Icon(Icons.search, size: 32.0, color: Color(0xFF646465)),
-                            )
-                          ]
-                        )
+                            new MarkerLayerOptions(
+                              markers: [
+                                new Marker(
+                                  width: 80.0,
+                                  height: 80.0,
+                                  point: new LatLng(51.5, -0.09),
+                                  builder: (ctx) =>
+                                  new Container(
+                                    child: Icon(Icons.location_on, size: 40.0, color: Color(0xFFf9c446)),
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ],
+                        ),
+                      ),
                     ],
                   ),
                 )
