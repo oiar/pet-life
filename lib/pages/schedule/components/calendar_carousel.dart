@@ -15,9 +15,9 @@ class Screen extends State<CalenderScreen> {
   @override
   void initState() {
     _markedDateMap.add(
-      new DateTime(2019, 5, 22),
+      DateTime.now(),
       new Event(
-        date: new DateTime(2019, 5, 22),
+        date: DateTime.now(),
         title: 'Event 5',
       )
     );
@@ -49,150 +49,140 @@ class Screen extends State<CalenderScreen> {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        Row(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Card(
-              margin: EdgeInsets.only(bottom: 16.0),
-              elevation: 5.0,
-              shape: const RoundedRectangleBorder(borderRadius: BorderRadius.all(Radius.circular(14.0))),
-              child: Container(
-                padding: EdgeInsets.only(left: 20.0, right: 20.0, top: 5.0, bottom: 5.0),
-                child: CalendarCarousel(
-                  weekFormat: false,
-                  markedDatesMap: _markedDateMap,
-                  onDayPressed: (DateTime date, List<Event> events) {
-                    this.setState(() => refresh(date));
-                  },
-                  weekdayTextStyle: TextStyle(
-                    color: Color(0xFFF9C446)
-                  ),
-                  weekendTextStyle: TextStyle(
-                    color: Colors.black
-                  ),
-                  iconColor: Color(0xFFF9C446),
-                  todayButtonColor: Color(0xFFF9C446),
-                  headerTextStyle: TextStyle(
-                    color: Color(0xFFF9C446),
-                    fontSize: 20
-                  ),
-                  childAspectRatio: 1.5,
-                  height: 300.0,
-                  width: 330.0,
+        Card(
+          elevation: 5.0,
+          shape: const RoundedRectangleBorder(borderRadius: BorderRadius.all(Radius.circular(14.0))),
+          child: Container(
+            padding: EdgeInsets.only(left: 32.0, right: 32.0, bottom: 32.0),
+            child: CalendarCarousel(
+              headerMargin: EdgeInsets.only(top: 16.0, bottom: 8.0),
+              markedDatesMap: _markedDateMap,
+              onDayPressed: (DateTime date, List<Event> events) {
+                this.setState(() => refresh(date));
+              },
+              weekdayTextStyle: TextStyle(
+                color: Color(0xFFF9C446)
+              ),
+              weekendTextStyle: TextStyle(
+                color: Colors.black
+              ),
+              iconColor: Color(0xFFF9C446),
+              todayButtonColor: Color(0xFFF9C446),
+              headerTextStyle: TextStyle(
+                color: Color(0xFFF9C446),
+                fontSize: 20
+              ),
+              height: 300.0,
+              width: 300.0,
+            ),
+          )
+        ),
+        Card(
+          margin: EdgeInsets.only(left: 16.0, right: 16.0, top: 16.0),
+          elevation: 1.0,
+          shape: const RoundedRectangleBorder(borderRadius: BorderRadius.all(Radius.circular(14.0))),
+          child: Container(
+            height: 90,
+            child: Flex(
+              direction: Axis.horizontal,
+              children: [
+                Expanded(
+                  flex: 1,
+                  child: Container(
+                    child: Center(
+                      child: Text(
+                        '10 May',
+                        textAlign: TextAlign.center,
+                        style: TextStyle(color: Color(0xFFF9C446), fontSize: 16.0)
+                      )
+                    )
+                  )
                 ),
-              )
-            )
-          ]
-        ),
-        Row(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children:[
-            Container(
-              width: 380,
-              margin: EdgeInsets.only(bottom: 14.0),
-              child: Card(
-                elevation: 1.0,
-                shape: const RoundedRectangleBorder(borderRadius: BorderRadius.all(Radius.circular(14.0))),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children:[
-                    Container(
-                      margin: EdgeInsets.only(left: 20.0, right: 15.0, top: 5.0, bottom: 5.0),
-                      height: 80,
+                Expanded(
+                  flex: 2,
+                    child: Container(
+                    margin: EdgeInsets.only(left: 5.0, right: 5.0, top: 5.0, bottom: 5.0),
+                    child: Text(
+                      calendarText,
+                    ),
+                  )
+                ),
+                Expanded(
+                  flex: 1,
+                  child: Card(
+                    margin: EdgeInsets.only(right: 16.0, left: 8.0),
+                    shape: const RoundedRectangleBorder(borderRadius: BorderRadius.all(Radius.circular(14.0))),
+                    color: Color(0xFFF9C446),
+                    child: Container(
+                      width: 70,
+                      height: 70,
                       child: Center(
                         child: Text(
-                          '10 May',
+                          '9:00',
                           textAlign: TextAlign.center,
-                          style: TextStyle(color: Color(0xFFF9C446), fontSize: 16.0)
+                          style: TextStyle(color: Colors.white, fontSize: 20.0)
                         )
                       )
                     ),
-                    Container(
-                      height: 80,
-                      width: 160,
-                      margin: EdgeInsets.only(left: 5.0, right: 5.0, top: 5.0, bottom: 5.0),
-                      child: Center(
-                        child: Text(
-                          calendarText,
-                        ),
-                      ),
-                    ),
-                    Container(
-                      height: 80,
-                      width: 80,
-                      margin: EdgeInsets.only(left: 20.0, right: 10.0, top: 5.0, bottom: 5.0),
-                      child: Card(
-                        shape: const RoundedRectangleBorder(borderRadius: BorderRadius.all(Radius.circular(14.0))),
-                        color: Color(0xFFF9C446),
-                        child: Center(
-                          child: Text(
-                            '9:00',
-                            textAlign: TextAlign.center,
-                            style: TextStyle(color: Colors.white, fontSize: 20.0)
-                          )
-                        ),
+                  )
+                )
+              ]
+            )
+          )
+        ),
+        Card(
+          margin: EdgeInsets.only(left: 16.0, right: 16.0, top: 16.0),
+          elevation: 1.0,
+          shape: const RoundedRectangleBorder(borderRadius: BorderRadius.all(Radius.circular(14.0))),
+          child: Container(
+            height: 90,
+            child: Flex(
+              direction: Axis.horizontal,
+              children: [
+                Expanded(
+                  flex: 1,
+                  child: Container(
+                    child: Center(
+                      child: Text(
+                        '10 May',
+                        textAlign: TextAlign.center,
+                        style: TextStyle(color: Color(0xFFF9C446), fontSize: 16.0)
                       )
                     )
-                  ]
-                )
-              )
-            )
-          ]
-        ),
-        Row(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Container(
-              width: 380,
-              child: Card(
-                elevation: 1.0,
-                shape: const RoundedRectangleBorder(borderRadius: BorderRadius.all(Radius.circular(14.0))),
-                child: Row(
-                  children:[
-                    Container(
-                      margin: EdgeInsets.only(left: 20.0, right: 15.0, top: 5.0, bottom: 5.0),
-                      height: 80,
+                  )
+                ),
+                Expanded(
+                  flex: 2,
+                    child: Container(
+                    margin: EdgeInsets.only(left: 5.0, right: 5.0, top: 5.0, bottom: 5.0),
+                    child: Text(
+                      calendarText,
+                    ),
+                  )
+                ),
+                Expanded(
+                  flex: 1,
+                  child: Card(
+                    margin: EdgeInsets.only(right: 16.0, left: 8.0),
+                    shape: const RoundedRectangleBorder(borderRadius: BorderRadius.all(Radius.circular(14.0))),
+                    color: Color(0xFFF9C446),
+                    child: Container(
+                      width: 70,
+                      height: 70,
                       child: Center(
-                        child: new Text(
-                          '10 May',
-                          overflow: TextOverflow.clip,
+                        child: Text(
+                          '15:00',
                           textAlign: TextAlign.center,
-                          style: TextStyle(color: Color(0xFFF9C446), fontSize: 16.0)
+                          style: TextStyle(color: Colors.white, fontSize: 20.0)
                         )
                       )
                     ),
-                    Container(
-                      height: 80,
-                      width: 160,
-                      margin: EdgeInsets.only(left: 5.0, right: 5.0, top: 5.0, bottom: 5.0),
-                      child: Center(
-                        child: Text(
-                          calendarText,
-                        ),
-                      ),
-                    ),
-                    Container(
-                      height: 80,
-                      width: 80,
-                      margin: EdgeInsets.only(left: 20.0, right: 10.0, top: 5.0, bottom: 5.0),
-                      child: Card(
-                        shape: const RoundedRectangleBorder(borderRadius: BorderRadius.all(Radius.circular(14.0))),
-                        color: Color(0xFFF9C446),
-                        child: Center(
-                          child: Text(
-                            '15:00',
-                            textAlign: TextAlign.center,
-                            style: TextStyle(color: Colors.white, fontSize: 20.0)
-                          )
-                        ),
-                      )
-                    )
-                  ]
+                  )
                 )
-              )
+              ]
             )
-          ]
-        )
+          )
+        ),
       ]
     );
   }

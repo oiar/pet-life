@@ -8,6 +8,7 @@ class BottomNavigation extends StatelessWidget {
   @override 
   Widget build(BuildContext context) {
     return MaterialApp(
+      // theme: ThemeData(fontFamily: 'PatuaOne'),
       home: BottomNavigationWidget(),
       routes: {
         '/service': (BuildContext context) => ServiceScreen(),
@@ -49,6 +50,7 @@ class BottomNavigationWidgetState extends State<BottomNavigationWidget> {
             backgroundColor: Colors.white,
             icon: Icon(
               Icons.pets,
+              size: 32,
               color: Color(0xFFffc542),
             ),
             title: Text(
@@ -60,6 +62,7 @@ class BottomNavigationWidgetState extends State<BottomNavigationWidget> {
             backgroundColor: Colors.white,
             icon: Icon(
               Icons.schedule,
+              size: 32,
               color: Color(0xFFffc542),
             ),
             title: Text(
@@ -71,6 +74,7 @@ class BottomNavigationWidgetState extends State<BottomNavigationWidget> {
             backgroundColor: Colors.white,
             icon: Icon(
               Icons.portrait,
+              size: 32,
               color: Color(0xFFffc542),
             ),
             title: Text(

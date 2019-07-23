@@ -1,4 +1,3 @@
-import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:flutter_map/flutter_map.dart';
 import 'package:latlong/latlong.dart';
@@ -13,7 +12,6 @@ class Screen extends State<ArticleScreen> {
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
     final width = size.width;
-    final height = size.height; 
     return Scaffold(
       backgroundColor: Color(0xFFFEF1D4),
       body: Scrollbar(
@@ -45,30 +43,36 @@ class Screen extends State<ArticleScreen> {
                 ]
               ),
               Container(
+                padding: EdgeInsets.only(left: 20.0, right: 20.0, top: 20.0, bottom: 8.0),
                 color: Colors.white,
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Container(
-                      margin: EdgeInsets.only(top: 16, left: 20, right: 20),
                       child: Text('Lovely Pet', style: TextStyle(fontSize: 26)),
                     ),
-                    Row(
-                      crossAxisAlignment: CrossAxisAlignment.end,
+                    Flex(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      direction: Axis.horizontal,
                       children: [
-                        Container(
-                          margin: EdgeInsets.only(left: 20.0, bottom: 24.0),
-                          child: Text('123 Avenue Street, City', style: TextStyle(fontSize: 16)),
+                        Expanded(
+                          flex: 2,
+                          child: Container(
+                            margin: EdgeInsets.only(top: 10.0),
+                            child: Text('123 Avenue Street, City', style: TextStyle(fontSize: 16)),
+                          )
                         ),
-                        Container(
-                          width: 140,
-                          margin: EdgeInsets.only(left: 40.0, bottom: 8.0),
-                          child: FlatButton(
-                            shape: RoundedRectangleBorder(borderRadius: BorderRadius.all(Radius.circular(25.0))),
-                            onPressed: () {},
-                            color: Color(0xFFf9c446),
-                            child: Text('Book', style: TextStyle(color: Colors.white, fontSize: 16),),
-                          ),
+                        Expanded(
+                          flex: 1,
+                          child: Container(
+                            margin: EdgeInsets.only(bottom: 8.0),
+                            child: FlatButton(
+                              shape: RoundedRectangleBorder(borderRadius: BorderRadius.all(Radius.circular(25.0))),
+                              onPressed: () {},
+                              color: Color(0xFFf9c446),
+                              child: Text('Book', style: TextStyle(color: Colors.white, fontSize: 16),),
+                            ),
+                          )
                         )
                       ]
                     ),
@@ -96,7 +100,7 @@ class Screen extends State<ArticleScreen> {
                         child: Text('Saturdays 9AM to 6PM*', style: TextStyle(fontSize: 16.0),),
                       ),
                       Container(
-                        margin: EdgeInsets.only(top: 16.0, left: 16.0),
+                        margin: EdgeInsets.only(top: 16.0, left: 16.0, bottom: 8.0),
                         child: Text('Sundays 10AM to 5PM*', style: TextStyle(fontSize: 16.0),)
                       )
                     ],
@@ -124,7 +128,7 @@ class Screen extends State<ArticleScreen> {
                         child: Text('Pet sitting and walking', style: TextStyle(fontSize: 16.0),),
                       ),
                       Container(
-                        margin: EdgeInsets.only(top: 16.0, left: 16.0),
+                        margin: EdgeInsets.only(top: 16.0, left: 16.0, bottom: 8.0),
                         child: Text('Pet Spa and Bathing option', style: TextStyle(fontSize: 16.0),)
                       )
                     ],

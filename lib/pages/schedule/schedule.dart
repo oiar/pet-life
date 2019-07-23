@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'components/bottom_sheet.dart';
 import 'components/calendar_carousel.dart';
-import 'package:flutter_app/bottom_navigation.dart';
 
 class ScheduleScreen extends StatefulWidget {
   @override
@@ -14,19 +13,12 @@ class Screen extends State<ScheduleScreen> {
   Widget build(BuildContext context) {
     return new MaterialApp(
       home: new Container(
-        // decoration: BoxDecoration(
-        //   image: DecorationImage(
-        //     image: NetworkImage('https://ws1.sinaimg.cn/large/006tNc79gy1g2yro70kwjj30f00qoq2u.jpg'),
-        //     fit: BoxFit.cover
-        //   )
-        // ),
         child: Scaffold(
-          // bottomNavigationBar: BottomNavigationWidget(),
           backgroundColor: Colors.transparent,
           appBar: AppBar(
             backgroundColor: Colors.transparent,
             elevation: 0,
-            title: new Text('Schedule', style: new TextStyle(fontWeight: FontWeight.bold, color: Colors.white, fontSize: 32.0)),
+            title: new Text('Schedule', style: new TextStyle(fontWeight: FontWeight.bold, color: Colors.white, fontSize: 32.0, fontFamily: 'PatuaOne')),
           ),
           body: Scrollbar(
             child: new SingleChildScrollView(
@@ -37,7 +29,7 @@ class Screen extends State<ScheduleScreen> {
                     mainAxisAlignment: MainAxisAlignment.start,
                     children: [
                       Card(
-                        margin: EdgeInsets.only(right: 16.0, top: 20.0, left: 20.0),
+                        margin: EdgeInsets.only(right: 16.0, top: 16.0, left: 16.0),
                         elevation: 3.0,
                         shape: const RoundedRectangleBorder(borderRadius: BorderRadius.all(Radius.circular(14.0))),
                         child: Column(
@@ -56,7 +48,7 @@ class Screen extends State<ScheduleScreen> {
                         ),
                       ),
                       Card(
-                        margin: EdgeInsets.only(top: 20.0),
+                        margin: EdgeInsets.only(top: 16.0),
                         elevation: 3.0,
                         shape: const RoundedRectangleBorder(borderRadius: BorderRadius.all(Radius.circular(14.0))),
                         child: Column(
@@ -76,20 +68,30 @@ class Screen extends State<ScheduleScreen> {
                       )
                     ],
                   ),
-                  Row(
-                    crossAxisAlignment: CrossAxisAlignment.center,
+                  Flex(
+                    direction: Axis.horizontal,
                     children: [
-                      Container(
-                        margin: EdgeInsets.only(left: 16.0, top: 25.0, bottom: 16.0),
-                        child: new Icon(Icons.date_range, color: Color(0xFF646465), size: 36.0,),
+                      Expanded(
+                        flex: 5,
+                        child: Row(
+                          children: [
+                            Container(
+                              margin: EdgeInsets.only(left: 16.0, top: 25.0, bottom: 4.0),
+                              child: new Icon(Icons.date_range, color: Color(0xFF646465), size: 36.0,),
+                            ),
+                            Container(
+                              margin: EdgeInsets.only(left: 16.0, top: 25.0, bottom: 4.0),
+                              child: new Text('Schedule & Appoinment', style: TextStyle(fontWeight: FontWeight.bold, fontSize: 18, color: Color(0xFF646465))),
+                            )
+                          ]
+                        )
                       ),
-                      Container(
-                        margin: EdgeInsets.only(left: 16.0, top: 25.0, bottom: 16.0),
-                        child: new Text('Schedule & Appoinment', style: TextStyle(fontWeight: FontWeight.bold, fontSize: 16, color: Color(0xFF646465))),
-                      ),
-                      Container(
-                        margin: EdgeInsets.only(left: 110.0, top: 25.0, bottom: 16.0),
-                        child: IconBottomSheet(),
+                      Expanded(
+                        flex: 1,
+                        child: Container(
+                          margin: EdgeInsets.only(top: 25.0, bottom: 4.0),
+                          child: IconBottomSheet(),
+                        )
                       )
                     ],
                   ),

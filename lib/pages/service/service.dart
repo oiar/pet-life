@@ -18,15 +18,17 @@ class Screen extends State<ServiceScreen> {
         appBar: new AppBar(
           backgroundColor: Colors.transparent,
           elevation: 0,
-          title: new Text('Service', style: new TextStyle(fontWeight: FontWeight.bold, color: Colors.white, fontSize: 32.0)),
+          title: new Text('Service', style: new TextStyle(fontWeight: FontWeight.bold, color: Colors.white, fontSize: 32.0, fontFamily: 'PatuaOne')),
           bottom: new TabBar(
-            indicatorColor: Colors.white,
-            labelColor: Colors.white,
             isScrollable: true,
+            labelPadding: EdgeInsets.only(left: 22.0, right: 22.0),
+            indicatorColor: Colors.white,
+            indicatorSize: TabBarIndicatorSize.label,
+            labelColor: Colors.white,
             tabs: choices.map((Choice choice) {
               return new Tab(
                 text: choice.title,
-                icon: new Icon(choice.icon, color: Colors.white, size: 32),
+                icon: Icon(choice.icon, size: 32),
               );
             }).toList(),
           ),
