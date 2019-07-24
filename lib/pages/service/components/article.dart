@@ -89,18 +89,18 @@ class Screen extends State<ArticleScreen> {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: <Widget>[
                       Container(
-                        child: Text('Hours', style: TextStyle(fontSize: 20.0),),
+                        child: Text('Hours', style: TextStyle(fontSize: 22.0),),
                       ),
                       Container(
                         margin: EdgeInsets.only(top: 16.0, left: 16.0),
                         child: Text('Monday-Friday 9AM-7PM*', style: TextStyle(fontSize: 16.0),),
                       ),
                       Container(
-                        margin: EdgeInsets.only(top: 16.0, left: 16.0),
+                        margin: EdgeInsets.only(top: 14.0, left: 16.0),
                         child: Text('Saturdays 9AM to 6PM*', style: TextStyle(fontSize: 16.0),),
                       ),
                       Container(
-                        margin: EdgeInsets.only(top: 16.0, left: 16.0, bottom: 8.0),
+                        margin: EdgeInsets.only(top: 14.0, left: 16.0, bottom: 8.0),
                         child: Text('Sundays 10AM to 5PM*', style: TextStyle(fontSize: 16.0),)
                       )
                     ],
@@ -117,18 +117,18 @@ class Screen extends State<ArticleScreen> {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: <Widget>[
                       Container(
-                        child: Text('Service', style: TextStyle(fontSize: 20.0),),
+                        child: Text('Service', style: TextStyle(fontSize: 22.0),),
                       ),
                       Container(
                         margin: EdgeInsets.only(top: 16.0, left: 16.0),
                         child: Text('Pet Grooming', style: TextStyle(fontSize: 16.0),),
                       ),
                       Container(
-                        margin: EdgeInsets.only(top: 16.0, left: 16.0),
+                        margin: EdgeInsets.only(top: 14.0, left: 16.0),
                         child: Text('Pet sitting and walking', style: TextStyle(fontSize: 16.0),),
                       ),
                       Container(
-                        margin: EdgeInsets.only(top: 16.0, left: 16.0, bottom: 8.0),
+                        margin: EdgeInsets.only(top: 14.0, left: 16.0, bottom: 8.0),
                         child: Text('Pet Spa and Bathing option', style: TextStyle(fontSize: 16.0),)
                       )
                     ],
@@ -143,15 +143,21 @@ class Screen extends State<ArticleScreen> {
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: <Widget>[
-                      Row(
+                      Flex(
+                        direction: Axis.horizontal,
                         children: [
-                          Container(
-                            padding: EdgeInsets.all(16.0),
-                            child: Text('Location', style: TextStyle(fontSize: 20.0),),
+                          Expanded(
+                            flex: 5,
+                            child: Container(
+                              padding: EdgeInsets.all(16.0),
+                              child: Text('Location', style: TextStyle(fontSize: 22.0)),
+                            )
                           ),
-                          Container(
-                            margin: EdgeInsets.only(left: 220.0),
-                            child: Icon(Icons.search, size: 32.0, color: Color(0xFF646465)),
+                          Expanded(
+                            flex: 1,
+                            child: Container(
+                              child: Icon(Icons.search, size: 32.0, color: Color(0xFF646465)),
+                            )
                           )
                         ]
                       ),

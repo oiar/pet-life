@@ -140,7 +140,7 @@ class Screen extends State<Reward> {
                           flex: 2,
                           child: Container(
                             child: Container(
-                              child: Center(child: Text('10%', style: TextStyle(color: Colors.white, fontSize: 24))),
+                              child: Center(child: Text('30%', style: TextStyle(color: Colors.white, fontSize: 24))),
                               height: 70,
                               decoration: BoxDecoration(color: Color(0xFFffc542), borderRadius: BorderRadius.only(bottomLeft: Radius.circular(50), topRight: Radius.circular(14.0))),
                             )
@@ -211,7 +211,7 @@ class Screen extends State<Reward> {
                           flex: 2,
                           child: Container(
                             child: Container(
-                              child: Center(child: Text('10%', style: TextStyle(color: Colors.white, fontSize: 24))),
+                              child: Center(child: Text('20%', style: TextStyle(color: Colors.white, fontSize: 24))),
                               height: 70,
                               decoration: BoxDecoration(color: Color(0xFFffc542), borderRadius: BorderRadius.only(bottomLeft: Radius.circular(50), topRight: Radius.circular(14.0))),
                             )

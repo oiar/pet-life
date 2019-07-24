@@ -15,9 +15,9 @@ class Screen extends State<CalenderScreen> {
   @override
   void initState() {
     _markedDateMap.add(
-      DateTime.now(),
+      new DateTime(2019, 5, 22),
       new Event(
-        date: DateTime.now(),
+        date: new DateTime(2019, 5, 22),
         title: 'Event 5',
       )
     );
@@ -47,12 +47,15 @@ class Screen extends State<CalenderScreen> {
 
   @override
   Widget build(BuildContext context) {
+    final size = MediaQuery.of(context).size;
+    final width = size.width;
     return Column(
       children: [
         Card(
           elevation: 5.0,
           shape: const RoundedRectangleBorder(borderRadius: BorderRadius.all(Radius.circular(14.0))),
           child: Container(
+            width: width * 10 / 11,
             padding: EdgeInsets.only(left: 32.0, right: 32.0, bottom: 32.0),
             child: CalendarCarousel(
               headerMargin: EdgeInsets.only(top: 16.0, bottom: 8.0),
