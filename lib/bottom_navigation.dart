@@ -8,7 +8,6 @@ class BottomNavigation extends StatelessWidget {
   @override 
   Widget build(BuildContext context) {
     return MaterialApp(
-      // theme: ThemeData(fontFamily: 'PatuaOne'),
       home: BottomNavigationWidget(),
       routes: {
         '/service': (BuildContext context) => ServiceScreen(),
