@@ -202,4 +202,3 @@ class Screen extends State<ArticleScreen> {
     );
   }
 }
-

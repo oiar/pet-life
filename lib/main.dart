@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_app/pages/schedule/schedule.dart';
-import 'package:flutter_app/pages/service/service.dart';
 import 'bottom_navigation.dart';
 
 void main() => runApp(new MyApp());
