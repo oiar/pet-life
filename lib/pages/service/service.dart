@@ -11,36 +11,48 @@ class ServiceScreen extends StatefulWidget {
 class Screen extends State<ServiceScreen> {
   @override
   Widget build(BuildContext context) {
-    return DefaultTabController(
-      length: choices.length,
-      child: Scaffold(
-        backgroundColor: Colors.transparent,
-        appBar: new AppBar(
-          backgroundColor: Colors.transparent,
-          elevation: 0,
-          title: new Text('Service', style: new TextStyle(fontWeight: FontWeight.bold, color: Colors.white, fontSize: 32.0, fontFamily: 'PatuaOne')),
-          bottom: new TabBar(
-            isScrollable: true,
-            labelPadding: EdgeInsets.only(left: 22.0, right: 22.0),
-            indicatorColor: Colors.white,
-            indicatorSize: TabBarIndicatorSize.label,
-            labelColor: Colors.white,
-            tabs: choices.map((Choice choice) {
-              return new Tab(
-                text: choice.title,
-                icon: Icon(choice.icon, size: 32),
-              );
-            }).toList(),
-          ),
+    return Scaffold(
+      backgroundColor: Colors.transparent,
+      body: DefaultTabController(
+        length: choices.length,
+        child: SafeArea(
+          child: NestedScrollView(
+            headerSliverBuilder: (BuildContext context,bool innerBoxIsScrolled) {
+              return <Widget>[
+                SliverOverlapAbsorber(
+                  handle: NestedScrollView.sliverOverlapAbsorberHandleFor(context),
+                  child: SliverAppBar(
+                    bottom: new TabBar(
+                      isScrollable: true,
+                      labelPadding: EdgeInsets.only(left: 22.0, right: 22.0),
+                      indicatorColor: Colors.white,
+                      indicatorSize: TabBarIndicatorSize.label,
+                      labelColor: Colors.white,
+                      tabs: choices.map((Choice choice) {
+                        return new Tab(
+                          text: choice.title,
+                          icon: Icon(choice.icon, size: 32),
+                        );
+                      }).toList(),
+                    ),
+                    pinned: false,
+                    elevation: 0,
+                    backgroundColor: Colors.transparent,
+                    title: Text('Service', style: new TextStyle(fontWeight: FontWeight.bold, color: Colors.white, fontSize: 32.0, fontFamily: 'PatuaOne')),
+                  ),
+                )
+              ];
+            },
+            body: new TabBarView(
+              children: <Widget>[
+                SpaScreen(),
+                HotelScreen(),
+                FoodScreen(),
+              ],
+            ),
+          )
         ),
-        body: new TabBarView(
-          children: <Widget>[
-            SpaScreen(),
-            HotelScreen(),
-            FoodScreen(),
-          ],
-        ),
-      ), 
+      ),
     );
   }
 }

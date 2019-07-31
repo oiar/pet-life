@@ -56,7 +56,7 @@ class Screen extends State<CalenderScreen> {
           shape: const RoundedRectangleBorder(borderRadius: BorderRadius.all(Radius.circular(14.0))),
           child: Container(
             width: width * 10 / 11,
-            padding: EdgeInsets.only(left: 32.0, right: 32.0, bottom: 32.0),
+            padding: EdgeInsets.only(left: 32.0, right: 32.0, bottom: 16.0),
             child: CalendarCarousel(
               headerMargin: EdgeInsets.only(top: 16.0, bottom: 8.0),
               markedDatesMap: _markedDateMap,
@@ -75,7 +75,7 @@ class Screen extends State<CalenderScreen> {
                 color: Color(0xFFF9C446),
                 fontSize: 20
               ),
-              height: 300.0,
+              height: 320.0,
               width: 300.0,
             ),
           )
