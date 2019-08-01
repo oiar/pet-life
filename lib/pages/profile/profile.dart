@@ -22,7 +22,7 @@ class Screen extends State<ProfileScreen> {
                   SliverAppBar(
                     elevation: 0,
                     backgroundColor: Colors.transparent,
-                    title: Text('Profile', style: new TextStyle(fontWeight: FontWeight.bold, color: Colors.white, fontSize: 32.0, fontFamily: 'PatuaOne')),
+                    title: Text('Profile', style: new TextStyle(fontWeight: FontWeight.bold, color: Colors.white, fontSize: 36.0, fontFamily: 'PatuaOne')),
                   )
                 ];
               },
@@ -30,54 +30,61 @@ class Screen extends State<ProfileScreen> {
                 child: new Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Card(
-                      margin: EdgeInsets.all(16.0),
-                      elevation: 3.0,
-                      shape: const RoundedRectangleBorder(borderRadius: BorderRadius.all(Radius.circular(14.0))),
-                      child: new Container(
-                        height: 100,
-                        child: Flex(
-                          direction: Axis.horizontal,
-                          children: [
-                            Expanded(
-                              flex: 1,
-                              child: Container(
-                                child: new Icon(Icons.portrait, size: 70, color: Color(0xFFffc542)),
-                              )
-                            ),
-                            Expanded(
-                              flex: 3,
-                              child: Container(
-                                margin: EdgeInsets.only(left: 8.0),
-                                child: new Column(
-                                  crossAxisAlignment: CrossAxisAlignment.start,
-                                  mainAxisAlignment: MainAxisAlignment.center,
-                                  children: [
-                                    Container(
-                                      child: new Text('Sienna Lee', style: TextStyle(fontSize: 24, fontFamily: 'Signika'))
-                                    ),
-                                    Container(
-                                      child: new Row(
-                                        mainAxisAlignment: MainAxisAlignment.start,
-                                        children: [
-                                          Container(
-                                            margin: EdgeInsets.only(top: 8.0),
-                                            child: new Text('Edit profile', style: TextStyle(fontSize: 16)),
-                                          ),
-                                          Container(
-                                            margin: EdgeInsets.only(top: 8.0),
-                                            child: new Icon(Icons.navigate_next),
-                                          )
-                                        ],
+                    GestureDetector(
+                      onTap: () {
+                        Navigator.pushNamed(context, '/edit_profile');
+                      },
+                      child: Card(
+                        margin: EdgeInsets.all(16.0),
+                        elevation: 3.0,
+                        shape: const RoundedRectangleBorder(borderRadius: BorderRadius.all(Radius.circular(14.0))),
+                        child: new Container(
+                          height: 100,
+                          child: Flex(
+                            direction: Axis.horizontal,
+                            children: [
+                              Expanded(
+                                flex: 1,
+                                child: Container(
+                                  padding: EdgeInsets.all(12.0),
+                                  child: CircleAvatar(backgroundColor: Colors.white, radius: 100, backgroundImage: NetworkImage('http://www.wallpaper-box.com/cat/19201080/images/cat13.jpg'),),
+                                  // child: new Icon(Icons.portrait, size: 70, color: Color(0xFFffc542)),
+                                )
+                              ),
+                              Expanded(
+                                flex: 3,
+                                child: Container(
+                                  margin: EdgeInsets.only(left: 8.0),
+                                  child: new Column(
+                                    crossAxisAlignment: CrossAxisAlignment.start,
+                                    mainAxisAlignment: MainAxisAlignment.center,
+                                    children: [
+                                      Container(
+                                        child: new Text('Sienna Lee', style: TextStyle(fontSize: 26, fontFamily: 'Signika'))
                                       ),
-                                    )
-                                  ],
-                                ),
+                                      Container(
+                                        child: new Row(
+                                          mainAxisAlignment: MainAxisAlignment.start,
+                                          children: [
+                                            Container(
+                                              margin: EdgeInsets.only(top: 4.0),
+                                              child: new Text('Edit profile', style: TextStyle(fontSize: 18)),
+                                            ),
+                                            Container(
+                                              margin: EdgeInsets.only(top: 5.0),
+                                              child: new Icon(Icons.navigate_next, size: 26.0,),
+                                            )
+                                          ],
+                                        ),
+                                      )
+                                    ],
+                                  ),
+                                )
                               )
-                            )
-                          ],
-                        )
-                      ),
+                            ],
+                          )
+                        ),
+                      )
                     ),
                     Flex(
                       mainAxisAlignment: MainAxisAlignment.start,

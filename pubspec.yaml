@@ -19,6 +19,7 @@ environment:
 dependencies:
   intro_slider: ^2.2.5
   shared_preferences: ^0.5.3+4
+  google_maps_flutter: ^0.5.20+1
   flutter_map: ^0.7.0+1
   audioplayers: ^0.12.1
   archive: ^2.0.8
@@ -65,6 +66,24 @@ flutter:
     - family: PatuaOne
       fonts:
         - asset: lib/assets/fonts/PatuaOne-Regular.ttf
+    - family: OleoScript
+      fonts:
+        - asset: lib/assets/fonts/OleoScript-Bold.ttf
+    - family: Shrikhand
+      fonts:
+        - asset: lib/assets/fonts/Shrikhand-Regular.ttf
+    - family: Ultra
+      fonts:
+        - asset: lib/assets/fonts/Ultra-Regular.ttf
+    - family: BerkshireSwash
+      fonts:
+        - asset: lib/assets/fonts/BerkshireSwash-Regular.ttf
+    - family: Chewy
+      fonts:
+        - asset: lib/assets/fonts/Chewy-Regular.ttf
+    - family: Lobster
+      fonts:
+        - asset: lib/assets/fonts/Lobster-Regular.ttf
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.io/assets-and-images/#resolution-aware.

@@ -12,6 +12,10 @@ class Screen extends State<ScheduleScreen> {
   @override
   Widget build(BuildContext context) {
     return new MaterialApp(
+      theme: ThemeData(
+        primaryColor: Color(0xFFffc542),
+        accentColor: Color(0xFFffc542)
+      ),
       home: new Container(
         child: Scaffold(
           backgroundColor: Colors.transparent,
@@ -23,7 +27,7 @@ class Screen extends State<ScheduleScreen> {
                   SliverAppBar(
                     backgroundColor: Colors.transparent,
                     elevation: 0,
-                    title: Text('Schedule', style: new TextStyle(fontWeight: FontWeight.bold, color: Colors.white, fontSize: 32.0, fontFamily: 'PatuaOne')),
+                    title: Text('Schedule', style: new TextStyle(fontWeight: FontWeight.bold, color: Colors.white, fontSize: 36.0, fontFamily: 'PatuaOne')),
                   )
                 ];
               },

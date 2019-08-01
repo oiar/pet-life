@@ -169,7 +169,7 @@ class Screen extends State<ArticleScreen> {
                           child: FlutterMap(
                             options: new MapOptions(
                               center: LatLng(51.5, -0.09),
-                              zoom: 13.0,
+                              zoom: 18.0,
                             ),
                             layers: [
                               new TileLayerOptions(

@@ -38,7 +38,7 @@ class Screen extends State<ServiceScreen> {
                     pinned: false,
                     elevation: 0,
                     backgroundColor: Colors.transparent,
-                    title: Text('Service', style: new TextStyle(fontWeight: FontWeight.bold, color: Colors.white, fontSize: 32.0, fontFamily: 'PatuaOne')),
+                    title: Text('Service', style: new TextStyle(fontWeight: FontWeight.bold, color: Colors.white, fontSize: 36.0, fontFamily: 'PatuaOne')),
                   ),
                 )
               ];
