@@ -30,12 +30,12 @@ class Screen extends State<ExploreArticle> {
                     ),
                   ),
                   Container(
-                    // child: IconButton(
-                    //   icon: Icon(Icons.navigate_before, color: Colors.white, size: 36.0),
-                    //   onPressed: () {
-                    //     Navigator.pop(context);
-                    //   },
-                    // )
+                    child: IconButton(
+                      icon: Icon(Icons.navigate_before, color: Colors.white, size: 36.0),
+                      onPressed: () {
+                        Navigator.pop(context);
+                      },
+                    )
                   ),
                 ]
               ),
