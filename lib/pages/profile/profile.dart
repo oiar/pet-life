@@ -22,7 +22,7 @@ class Screen extends State<ProfileScreen> {
                   SliverAppBar(
                     elevation: 0,
                     backgroundColor: Colors.transparent,
-                    title: Text('Profile', style: new TextStyle(fontWeight: FontWeight.bold, color: Colors.white, fontSize: 36.0, fontFamily: 'PatuaOne')),
+                    title: Text('Profile', style: new TextStyle(fontWeight: FontWeight.bold, color: Colors.white, fontSize: 32.0, fontFamily: 'PatuaOne')),
                   )
                 ];
               },

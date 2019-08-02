@@ -31,14 +31,14 @@ class Screen extends State<ServiceScreen> {
                       tabs: choices.map((Choice choice) {
                         return new Tab(
                           text: choice.title,
-                          icon: Icon(choice.icon, size: 32),
+                          // icon: Icon(choice.icon, size: 32),
                         );
                       }).toList(),
                     ),
                     pinned: false,
                     elevation: 0,
                     backgroundColor: Colors.transparent,
-                    title: Text('Service', style: new TextStyle(fontWeight: FontWeight.bold, color: Colors.white, fontSize: 36.0, fontFamily: 'PatuaOne')),
+                    title: Text('Service', style: new TextStyle(fontWeight: FontWeight.bold, color: Colors.white, fontSize: 32.0, fontFamily: 'PatuaOne')),
                   ),
                 )
               ];

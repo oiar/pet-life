@@ -20,7 +20,7 @@ class Screen extends State<Explore> {
             elevation: 1.0,
             shape: const RoundedRectangleBorder(borderRadius: BorderRadius.all(Radius.circular(14.0))),
             child: Container(
-              height: 100,
+              height: 80,
               child: Flex(
                 direction: Axis.horizontal,
                 children:[
@@ -47,22 +47,24 @@ class Screen extends State<Explore> {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Container(
-                            margin: EdgeInsets.only(left: 16.0, bottom: 10.0),
+                            margin: EdgeInsets.only(left: 16.0, bottom: 4.0),
                             child: Text(
                               'Puppy Spa',
-                              style: TextStyle(fontSize: 20),
+                              style: TextStyle(fontSize: 16),
                             ),
                           ),
                           Container(
                             margin: EdgeInsets.only(left: 16.0),
                             child: Text(
                               '214 Casety Street, City',
+                              style: TextStyle(fontSize: 12),
                             ),
                           ),
                           Container(
-                            margin: EdgeInsets.only(left: 16.0, top: 6.0),
+                            margin: EdgeInsets.only(left: 16.0, top: 2.0),
                             child: Text(
                               '(84) 123 546 998',
+                              style: TextStyle(fontSize: 12),
                             ),
                           )
                         ]
@@ -79,7 +81,7 @@ class Screen extends State<Explore> {
           elevation: 1.0,
           shape: const RoundedRectangleBorder(borderRadius: BorderRadius.all(Radius.circular(14.0))),
           child: Container(
-            height: 100,
+            height: 80,
             child: Flex(
               direction: Axis.horizontal,
               children:[
@@ -106,22 +108,24 @@ class Screen extends State<Explore> {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Container(
-                          margin: EdgeInsets.only(left: 16.0, bottom: 10.0),
+                          margin: EdgeInsets.only(left: 16.0, bottom: 4.0),
                           child: Text(
                             'Pet Spa & Retreat',
-                            style: TextStyle(fontSize: 20),
+                            style: TextStyle(fontSize: 16),
                           ),
                         ),
                         Container(
                           margin: EdgeInsets.only(left: 16.0),
                           child: Text(
                             '214 Casety Street, City',
+                            style: TextStyle(fontSize: 12),
                           ),
                         ),
                         Container(
-                          margin: EdgeInsets.only(left: 16.0, top: 6.0),
+                          margin: EdgeInsets.only(left: 16.0, top: 2.0),
                           child: Text(
                             '(84) 123 546 998',
+                            style: TextStyle(fontSize: 12),
                           ),
                         )
                       ]
@@ -137,7 +141,7 @@ class Screen extends State<Explore> {
           elevation: 1.0,
           shape: const RoundedRectangleBorder(borderRadius: BorderRadius.all(Radius.circular(14.0))),
           child: Container(
-            height: 100,
+            height: 80,
             child: Flex(
               direction: Axis.horizontal,
               children:[
@@ -164,22 +168,24 @@ class Screen extends State<Explore> {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Container(
-                          margin: EdgeInsets.only(left: 16.0, bottom: 10.0),
+                          margin: EdgeInsets.only(left: 16.0, bottom: 4.0),
                           child: Text(
                             'Puppy Spa',
-                            style: TextStyle(fontSize: 20),
+                            style: TextStyle(fontSize: 16),
                           ),
                         ),
                         Container(
                           margin: EdgeInsets.only(left: 16.0),
                           child: Text(
                             '214 Casety Street, City',
+                            style: TextStyle(fontSize: 12),
                           ),
                         ),
                         Container(
-                          margin: EdgeInsets.only(left: 16.0, top: 6.0),
+                          margin: EdgeInsets.only(left: 16.0, top: 2.0),
                           child: Text(
                             '(84) 123 546 998',
+                            style: TextStyle(fontSize: 12),
                           ),
                         )
                       ]
