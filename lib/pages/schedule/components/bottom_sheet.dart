@@ -18,7 +18,7 @@ class Screen extends State<IconBottomSheet> {
   @override
   Widget build(BuildContext context) {
     return new IconButton(
-      icon: Icon(Icons.add_circle_outline, size: 28.0, color: Color(0xFF646465)),
+      icon: Icon(Icons.add_circle_outline, size: 32.0, color: Color(0xFF646465)),
       onPressed: () => {
         showModalBottomSheet<String>(
           context: context,

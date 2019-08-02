@@ -55,38 +55,28 @@ class Screen extends State<CalenderScreen> {
           elevation: 5.0,
           shape: const RoundedRectangleBorder(borderRadius: BorderRadius.all(Radius.circular(14.0))),
           child: Container(
-            width: width * 4 / 5,
-            padding: EdgeInsets.only(left: 16.0, right: 16.0, bottom: 8.0),
+            width: width * 10 / 11,
+            padding: EdgeInsets.only(left: 32.0, right: 32.0, bottom: 16.0),
             child: CalendarCarousel(
-              headerMargin: EdgeInsets.only(top: 8.0, bottom: 4.0),
+              headerMargin: EdgeInsets.only(top: 16.0, bottom: 8.0),
               markedDatesMap: _markedDateMap,
               onDayPressed: (DateTime date, List<Event> events) {
                 this.setState(() => refresh(date));
               },
               weekdayTextStyle: TextStyle(
-                color: Color(0xFFF9C446),
-                fontSize: 12,
+                color: Color(0xFFF9C446)
               ),
               weekendTextStyle: TextStyle(
-                color: Colors.black,
-                fontSize: 12,
+                color: Colors.black
               ),
               iconColor: Color(0xFFF9C446),
               todayButtonColor: Color(0xFFF9C446),
               headerTextStyle: TextStyle(
                 color: Color(0xFFF9C446),
-                fontSize: 16
+                fontSize: 20
               ),
-              height: 250.0,
-              childAspectRatio: 1.2,
-              daysTextStyle: TextStyle(fontSize: 12),
-              prevDaysTextStyle: TextStyle(fontSize: 12),
-              nextDaysTextStyle: TextStyle(fontSize: 12),
-              todayTextStyle: TextStyle(fontSize: 12),
-              inactiveDaysTextStyle: TextStyle(fontSize: 12),
-              inactiveWeekendTextStyle: TextStyle(fontSize: 12),
-              selectedDayTextStyle: TextStyle(fontSize: 12),
-              markedDateMoreCustomTextStyle: TextStyle(fontSize: 12),
+              height: 320.0,
+              width: 300.0,
             ),
           )
         ),
@@ -95,7 +85,7 @@ class Screen extends State<CalenderScreen> {
           elevation: 1.0,
           shape: const RoundedRectangleBorder(borderRadius: BorderRadius.all(Radius.circular(14.0))),
           child: Container(
-            height: 80,
+            height: 90,
             child: Flex(
               direction: Axis.horizontal,
               children: [
@@ -106,7 +96,7 @@ class Screen extends State<CalenderScreen> {
                       child: Text(
                         '10 May',
                         textAlign: TextAlign.center,
-                        style: TextStyle(color: Color(0xFFF9C446), fontSize: 14.0)
+                        style: TextStyle(color: Color(0xFFF9C446), fontSize: 16.0)
                       )
                     )
                   )
@@ -128,12 +118,12 @@ class Screen extends State<CalenderScreen> {
                     color: Color(0xFFF9C446),
                     child: Container(
                       width: 70,
-                      height: 60,
+                      height: 70,
                       child: Center(
                         child: Text(
                           '9:00',
                           textAlign: TextAlign.center,
-                          style: TextStyle(color: Colors.white, fontSize: 18.0)
+                          style: TextStyle(color: Colors.white, fontSize: 20.0)
                         )
                       )
                     ),
@@ -148,7 +138,7 @@ class Screen extends State<CalenderScreen> {
           elevation: 1.0,
           shape: const RoundedRectangleBorder(borderRadius: BorderRadius.all(Radius.circular(14.0))),
           child: Container(
-            height: 80,
+            height: 90,
             child: Flex(
               direction: Axis.horizontal,
               children: [
@@ -159,7 +149,7 @@ class Screen extends State<CalenderScreen> {
                       child: Text(
                         '10 May',
                         textAlign: TextAlign.center,
-                        style: TextStyle(color: Color(0xFFF9C446), fontSize: 14.0)
+                        style: TextStyle(color: Color(0xFFF9C446), fontSize: 16.0)
                       )
                     )
                   )
@@ -181,12 +171,12 @@ class Screen extends State<CalenderScreen> {
                     color: Color(0xFFF9C446),
                     child: Container(
                       width: 70,
-                      height: 60,
+                      height: 70,
                       child: Center(
                         child: Text(
                           '15:00',
                           textAlign: TextAlign.center,
-                          style: TextStyle(color: Colors.white, fontSize: 18.0)
+                          style: TextStyle(color: Colors.white, fontSize: 20.0)
                         )
                       )
                     ),
