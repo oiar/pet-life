@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'bottom_navigation.dart';
 import 'package:flutter_app/splash_widget.dart';
 
 void main() => runApp(new MyApp());
@@ -8,11 +9,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return RestartWidget(
       child: MaterialApp(
-        theme: ThemeData(
-          primaryColor: Color(0xFFffc542),
-          accentColor: Color(0xFFffc542),
-          backgroundColor: Colors.white
-        ),
+        theme: ThemeData(backgroundColor: Colors.white),
         home: Scaffold(
           resizeToAvoidBottomPadding: false,
           body: SplashWidget(),

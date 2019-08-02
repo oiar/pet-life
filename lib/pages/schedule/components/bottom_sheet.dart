@@ -23,12 +23,7 @@ class Screen extends State<IconBottomSheet> {
         showModalBottomSheet<String>(
           context: context,
           builder: (BuildContext context) => Theme(
-            data: ThemeData(
-              primaryColor: Color(0xFFffc542),
-              accentColor: Color(0xFFffc542),
-              textSelectionColor: Color(0xFFffc542),
-              focusColor: Color(0xFFffc542)
-            ),
+            data: ThemeData(primaryColor: Color(0xFFffc542)),
             child: Container(
               color: Colors.white,
               child: ListView(

@@ -12,10 +12,6 @@ class Screen extends State<ScheduleScreen> {
   @override
   Widget build(BuildContext context) {
     return new MaterialApp(
-      theme: ThemeData(
-        primaryColor: Color(0xFFffc542),
-        accentColor: Color(0xFFffc542)
-      ),
       home: new Container(
         child: Scaffold(
           backgroundColor: Colors.transparent,

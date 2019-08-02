@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_app/pages/profile/components/edit_profile.dart';
 import 'package:flutter_app/pages/service/components/explore_article.dart';
 import 'pages/service/components/article.dart';
 import 'pages/profile/profile.dart';
@@ -16,8 +15,7 @@ class BottomNavigation extends StatelessWidget {
         '/schedule': (BuildContext context) => ScheduleScreen(),
         '/profile': (BuildContext context) => ProfileScreen(),
         '/article': (BuildContext context) => ArticleScreen(),
-        '/explore_article': (BuildContext context) => ExploreArticle(),
-        '/edit_profile': (BuildContext context) => EditProfile(),
+        '/explore_article': (BuildContext context) => ExploreArticle()
       }
     );
   }

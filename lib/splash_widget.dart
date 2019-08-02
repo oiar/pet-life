@@ -20,7 +20,7 @@ class _SplashWidgetState extends State<SplashWidget> {
     slides.add(
       new Slide(
         title: 'Profile',
-        styleTitle: TextStyle(fontFamily: 'BerkshireSwash', fontSize: 36, fontWeight: FontWeight.bold),
+        styleTitle: TextStyle(fontFamily: 'Signika', fontSize: 36),
         pathImage: 'lib/assets/images/restart1.png',
         backgroundColor: Colors.white,
       ),
@@ -29,7 +29,7 @@ class _SplashWidgetState extends State<SplashWidget> {
     slides.add(
       new Slide(
         title: 'Schedule',
-        styleTitle: TextStyle(fontFamily: 'BerkshireSwash', fontSize: 36, fontWeight: FontWeight.bold),
+        styleTitle: TextStyle(fontFamily: 'Signika', fontSize: 36),
         pathImage: 'lib/assets/images/restart2.png',
         backgroundColor: Colors.white,
       ),
@@ -38,7 +38,7 @@ class _SplashWidgetState extends State<SplashWidget> {
     slides.add(
       new Slide(
         title: 'Service',
-        styleTitle: TextStyle(fontFamily: 'BerkshireSwash', fontSize: 36, fontWeight: FontWeight.bold),
+        styleTitle: TextStyle(fontFamily: 'Signika', fontSize: 36),
         pathImage: 'lib/assets/images/restart3.png',
         backgroundColor: Colors.white
       ),
@@ -50,6 +50,16 @@ class _SplashWidgetState extends State<SplashWidget> {
     Navigator.of(context).pushAndRemoveUntil(
       new MaterialPageRoute(
         builder: (context) => BottomNavigation()
+      ),
+      (route) => route == null
+    );
+  }
+
+  void onSkipPress() {
+    _setHasSkip();
+    Navigator.of(context).pushAndRemoveUntil(
+      new MaterialPageRoute(
+        builder: (context) => BottomNavigationWidget()
       ),
       (route) => route == null
     );
@@ -72,7 +82,7 @@ class _SplashWidgetState extends State<SplashWidget> {
         styleNameSkipBtn: TextStyle(color: Color(0xFFffc542)),
         slides: this.slides,
         onDonePress: this.onDonePress,
-        onSkipPress: this.onDonePress,
+        onSkipPress: this.onSkipPress,
         nameSkipBtn: "SKIP",
         nameNextBtn: "NEXT",
         nameDoneBtn: "NEXT",
