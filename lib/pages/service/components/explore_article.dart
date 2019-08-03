@@ -13,6 +13,7 @@ class Screen extends State<ExploreArticle> {
       backgroundColor: Color(0xFFFEF1D4),
       body: Scrollbar(
         child: SingleChildScrollView(
+          physics: BouncingScrollPhysics(),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.center,
             children: <Widget>[

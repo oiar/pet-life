@@ -31,6 +31,7 @@ class Screen extends State<EditProfile> {
           top: false,
           child: Scrollbar(
             child: SingleChildScrollView(
+              physics: BouncingScrollPhysics(),
               child: Column(
                 children: <Widget>[
                   Stack(

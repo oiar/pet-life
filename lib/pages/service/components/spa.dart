@@ -13,6 +13,7 @@ class Screen extends State<SpaScreen> {
   Widget build(BuildContext context) {
     return Scrollbar(
       child: SingleChildScrollView(
+        physics: BouncingScrollPhysics(),
         child: Container(
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,

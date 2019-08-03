@@ -20,6 +20,7 @@ class Screen extends State<ArticleScreen> {
         bottom: false,
         child: Scrollbar(
           child: SingleChildScrollView(
+            physics: BouncingScrollPhysics(),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [

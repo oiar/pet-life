@@ -10,6 +10,7 @@ class Screen extends State<HotelScreen> {
   Widget build(BuildContext context) {
     return Scrollbar(
       child: new SingleChildScrollView(
+        physics: BouncingScrollPhysics(),
         // child: MapScreen()
       )
     );

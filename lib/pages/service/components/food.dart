@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:audioplayers/audio_cache.dart';
 import 'package:audioplayers/audioplayers.dart';
 import 'package:http/http.dart';
-import 'player_widget.dart';
 
 const kUrl1 = 'https://luan.xyz/files/audio/ambient_c_motion.mp3';
 
@@ -35,7 +34,7 @@ class Screen extends State<FoodScreen> {
   Widget build(BuildContext context) {
     return Scrollbar(
       child: new SingleChildScrollView(
-        child: PlayerWidget(url: kUrl1),
+        physics: BouncingScrollPhysics(),
         // child: Container()
       ),
     );

@@ -18,6 +18,7 @@ class Screen extends State<ServiceScreen> {
         length: choices.length,
         child: SafeArea(
           child: NestedScrollView(
+            physics: BouncingScrollPhysics(),
             headerSliverBuilder: (BuildContext context,bool innerBoxIsScrolled) {
               return <Widget>[
                 SliverOverlapAbsorber(

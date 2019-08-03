@@ -18,6 +18,7 @@ class Screen extends State<ProfileScreen> {
           body: SafeArea(
             bottom: false,
             child: NestedScrollView(
+              physics: BouncingScrollPhysics(),
               headerSliverBuilder: (BuildContext context, bool innerBoxIsScrolled) {
                 return <Widget>[
                   SliverAppBar(
@@ -28,6 +29,7 @@ class Screen extends State<ProfileScreen> {
                 ];
               },
               body: new SingleChildScrollView(
+                physics: BouncingScrollPhysics(),
                 child: new Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
