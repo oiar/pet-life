@@ -31,7 +31,7 @@ class Screen extends State<Reward> {
                         bottomLeft: Radius.circular(14.0)
                       ),
                       image: DecorationImage(
-                        image: NetworkImage('https://barkpost-assets.s3.amazonaws.com/wp-content/uploads/2013/03/fashion_is_pain-612x405.jpg'),
+                        image: AssetImage('lib/assets/images/puppy_spa.jpg'),
                         fit: BoxFit.cover
                       ),
                     ),
@@ -103,7 +103,7 @@ class Screen extends State<Reward> {
                         bottomLeft: Radius.circular(14.0)
                       ),
                       image: DecorationImage(
-                        image: NetworkImage('http://g01.a.alicdn.com/kf/HTB1uvG9JFXXXXbbXXXXq6xXFXXX8/Yorkshire-Terrier-DIY-Puppy-Mural-Pet-shop-Spa-Grooming-Salon-font-b-Veterinary-b-font-wall.jpg'),
+                        image: AssetImage('lib/assets/images/mart.jpg'),
                         fit: BoxFit.cover
                       ),
                     ),
@@ -175,7 +175,7 @@ class Screen extends State<Reward> {
                         bottomLeft: Radius.circular(14.0)
                       ),
                       image: DecorationImage(
-                        image: NetworkImage('https://images.adsttc.com/media/images/5012/e0f1/28ba/0d06/5800/02ff/large_jpg/stringio.jpg?1414028196'),
+                        image: AssetImage('lib/assets/images/stringio.jpg'),
                         fit: BoxFit.cover
                       ),
                     ),

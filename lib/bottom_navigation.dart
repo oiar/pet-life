@@ -51,39 +51,36 @@ class BottomNavigationWidgetState extends State<BottomNavigationWidget> {
         backgroundColor: Colors.white,
         items: [
           BottomNavigationBarItem(
-            backgroundColor: Colors.white,
             icon: Icon(
               Icons.pets,
-              size: 30,
+              size: ScreenUtil().setWidth(60),
               color: Color(0xFFffc542),
             ),
             title: Text(
               'Service',
-              style: TextStyle(color: Color(0xFFffc542)),
+              style: TextStyle(color: Color(0xFFffc542), fontSize: ScreenUtil().setWidth(28)),
             )
           ),
           BottomNavigationBarItem(
-            backgroundColor: Colors.white,
             icon: Icon(
               Icons.schedule,
-              size: 30,
+              size: ScreenUtil().setWidth(60),
               color: Color(0xFFffc542),
             ),
             title: Text(
               'Schedule',
-              style: TextStyle(color: Color(0xFFffc542)),
+              style: TextStyle(color: Color(0xFFffc542), fontSize: ScreenUtil().setWidth(28)),
             )
           ),
           BottomNavigationBarItem(
-            backgroundColor: Colors.white,
             icon: Icon(
               Icons.portrait,
-              size: 30,
+              size: ScreenUtil().setWidth(60),
               color: Color(0xFFffc542),
             ),
             title: Text(
               'Profile',
-              style: TextStyle(color: Color(0xFFffc542)),
+              style: TextStyle(color: Color(0xFFffc542), fontSize: ScreenUtil().setWidth(28)),
             )
           )
         ],
@@ -94,7 +91,7 @@ class BottomNavigationWidgetState extends State<BottomNavigationWidget> {
           });
         },
         type: BottomNavigationBarType.shifting,
-      ),
+      )
     );
   }
 }

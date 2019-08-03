@@ -17,7 +17,7 @@ class _OptionalCardState extends State<OptionalCard> {
             width: ScreenUtil().setWidth(200),
             height: ScreenUtil().setWidth(200),
             margin: EdgeInsets.only(bottom: ScreenUtil().setWidth(64.0)),
-            child: CircleAvatar(backgroundColor: Colors.white, radius: 100, backgroundImage: NetworkImage('http://www.wallpaper-box.com/cat/19201080/images/cat13.jpg')),
+            child: CircleAvatar(backgroundColor: Colors.white, radius: 100, backgroundImage: AssetImage('lib/assets/images/mira.jpg')),
           )
         ),
         Flex(

@@ -56,7 +56,7 @@ class Screen extends State<SpaScreen> {
                                       topRight: Radius.circular(14.0)
                                     ),
                                     image: DecorationImage(
-                                      image: NetworkImage('http://s3img.city.sina.com.cn/xiancheng/common/thumbnail/0/21b3f53872990991ba229acb4dc4ffc5.jpg'),
+                                      image: AssetImage('lib/assets/images/lovely_pet.jpg'),
                                       fit: BoxFit.cover
                                     ),
                                   ),
@@ -107,7 +107,7 @@ class Screen extends State<SpaScreen> {
                                       topRight: Radius.circular(14.0)
                                     ),
                                     image: DecorationImage(
-                                      image: NetworkImage('http://www.myhomedecor.org/wp-content/uploads/Mini-DIY-Bed-for-lovely-pets-616x350.jpg'),
+                                      image: AssetImage('lib/assets/images/pet_spa.jpeg'),
                                       fit: BoxFit.cover
                                     ),
                                   ),

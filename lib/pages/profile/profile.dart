@@ -47,15 +47,18 @@ class Screen extends State<ProfileScreen> {
                             direction: Axis.horizontal,
                             children: [
                               Expanded(
-                                flex: 1,
-                                child: Container(
-                                  padding: EdgeInsets.all(ScreenUtil().setWidth(24.0)),
-                                  child: CircleAvatar(backgroundColor: Colors.white, radius: 100, backgroundImage: NetworkImage('http://www.wallpaper-box.com/cat/19201080/images/cat13.jpg'),),
-                                  // child: new Icon(Icons.portrait, size: 70, color: Color(0xFFffc542)),
+                                flex: 4,
+                                child: Center(
+                                  child: Container(
+                                    height: ScreenUtil().setWidth(154),
+                                    width: ScreenUtil().setWidth(154),
+                                    // padding: EdgeInsets.all(ScreenUtil().setWidth(24.0)),
+                                    child: CircleAvatar(backgroundColor: Colors.white, radius: 100, backgroundImage: AssetImage('lib/assets/images/mira.jpg'),),
+                                  )
                                 )
                               ),
                               Expanded(
-                                flex: 3,
+                                flex: 11,
                                 child: Container(
                                   margin: EdgeInsets.only(left: ScreenUtil().setWidth(16.0)),
                                   child: new Column(

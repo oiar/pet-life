@@ -25,7 +25,7 @@ class Screen extends State<ExploreArticle> {
                     width: width,
                     decoration: BoxDecoration(
                       image: DecorationImage(
-                        image: NetworkImage('https://barkpost-assets.s3.amazonaws.com/wp-content/uploads/2013/03/fashion_is_pain-612x405.jpg'),
+                        image: AssetImage('lib/assets/images/puppy_spa.jpg'),
                         fit: BoxFit.cover
                       ),
                     ),

@@ -1,7 +1,6 @@
 import 'dart:ui';
 
 import 'package:flutter/material.dart';
-import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class EditProfile extends StatefulWidget {
@@ -22,8 +21,22 @@ class Screen extends State<EditProfile> {
       ),
       child: Scaffold(
         appBar: AppBar(
-          // elevation: 0.0,
-          title: Text('Edit', style: TextStyle(fontSize: ScreenUtil().setSp(48)),),
+          iconTheme: IconThemeData(color: Colors.white),
+          actions: <Widget>[
+            Container(
+              margin: EdgeInsets.only(right: ScreenUtil().setWidth(16.0)),
+              child: Center(
+                child: Text(
+                  'Save',
+                  style: TextStyle(
+                    fontSize: ScreenUtil().setWidth(46.0),
+                    color: Colors.white
+                  ),
+                )
+              )
+            )
+          ],
+          title: Text('Edit', style: TextStyle(fontSize: ScreenUtil().setSp(54), color: Colors.white)),
           backgroundColor: Color(0xFFffc542),
         ),
         backgroundColor: Color(0xFFFEF1D4),
@@ -41,7 +54,7 @@ class Screen extends State<EditProfile> {
                         width: width,
                         decoration: BoxDecoration(
                           image: DecorationImage(
-                            image: NetworkImage('http://www.wallpaper-box.com/cat/19201080/images/cat13.jpg'),
+                            image: AssetImage('lib/assets/images/mira.jpg'),
                             fit: BoxFit.cover
                           ),
                         ),
@@ -53,16 +66,7 @@ class Screen extends State<EditProfile> {
                             margin: EdgeInsets.only(top: ScreenUtil().setWidth(200.0)),
                             width: ScreenUtil().setWidth(240),
                             height: ScreenUtil().setWidth(240),
-                            child: CircleAvatar(backgroundColor: Colors.white, radius: 100, backgroundImage: NetworkImage('http://www.wallpaper-box.com/cat/19201080/images/cat13.jpg'))
-                            // child: (Container(
-                            //   alignment: Alignment(-1.0, -0.6),
-                            //   child: IconButton(
-                            //     icon: Icon(Icons.navigate_before, color: Color(0xFFffc542), size: 40.0),
-                            //     onPressed: () {
-                            //       Navigator.pop(context);
-                            //     },
-                            //   )
-                            // )),
+                            child: CircleAvatar(backgroundColor: Colors.white, radius: 100, backgroundImage: AssetImage('lib/assets/images/mira.jpg'))
                           )
                         ),
                       ),
@@ -79,6 +83,24 @@ class Screen extends State<EditProfile> {
                             enabledBorder: UnderlineInputBorder(borderSide: BorderSide(width: 0.1)),
                             focusedBorder: UnderlineInputBorder(borderSide: BorderSide(width: 0.5, color: Color(0xFFffc542))),
                             labelText: 'Name',
+                            labelStyle: TextStyle(fontSize: ScreenUtil().setSp(28))
+                          ),
+                        ),
+                        TextField(
+                          cursorColor: Color(0xFFffc542),
+                          decoration: InputDecoration(
+                            enabledBorder: UnderlineInputBorder(borderSide: BorderSide(width: 0.1)),
+                            focusedBorder: UnderlineInputBorder(borderSide: BorderSide(width: 0.5, color: Color(0xFFffc542))),
+                            labelText: 'Address',
+                            labelStyle: TextStyle(fontSize: ScreenUtil().setSp(28))
+                          ),
+                        ),
+                        TextField(
+                          cursorColor: Color(0xFFffc542),
+                          decoration: InputDecoration(
+                            enabledBorder: UnderlineInputBorder(borderSide: BorderSide(width: 0.1)),
+                            focusedBorder: UnderlineInputBorder(borderSide: BorderSide(width: 0.5, color: Color(0xFFffc542))),
+                            labelText: 'Phone',
                             labelStyle: TextStyle(fontSize: ScreenUtil().setSp(28))
                           ),
                         ),

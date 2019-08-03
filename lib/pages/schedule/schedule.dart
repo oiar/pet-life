@@ -52,7 +52,7 @@ class Screen extends State<ScheduleScreen> {
                                   margin: EdgeInsets.all(ScreenUtil().setWidth(24.0)),
                                   width: ScreenUtil().setWidth(200),
                                   height: ScreenUtil().setWidth(200),
-                                  child: new CircleAvatar(backgroundColor: Colors.white, radius: 100, backgroundImage: NetworkImage('http://www.wallpaper-box.com/cat/19201080/images/cat13.jpg')),
+                                  child: new CircleAvatar(backgroundColor: Colors.white, radius: 100, backgroundImage: AssetImage('lib/assets/images/mira.jpg')),
                                 ),
                                 Container(
                                   margin: EdgeInsets.only(bottom: ScreenUtil().setWidth(32.0)),
@@ -71,7 +71,7 @@ class Screen extends State<ScheduleScreen> {
                                   margin: EdgeInsets.all(ScreenUtil().setWidth(24.0)),
                                   width: ScreenUtil().setWidth(200),
                                   height: ScreenUtil().setWidth(200),
-                                  child: new CircleAvatar(backgroundColor: Colors.white, radius: 100, backgroundImage: NetworkImage('http://www.wallpaper-box.com/cat/images/cat24.jpg')),
+                                  child: new CircleAvatar(backgroundColor: Colors.white, radius: 100, backgroundImage: AssetImage('lib/assets/images/min.jpg')),
                                 ),
                                 Container(
                                   margin: EdgeInsets.only(bottom: ScreenUtil().setWidth(32.0)),
