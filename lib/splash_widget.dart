@@ -1,5 +1,6 @@
 import 'package:intro_slider/intro_slider.dart';
 import 'package:intro_slider/slide_object.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_app/bottom_navigation.dart';
@@ -63,6 +64,7 @@ class _SplashWidgetState extends State<SplashWidget> {
 
   @override
   Widget build(BuildContext context) {
+    ScreenUtil.instance = ScreenUtil(width: 828, height: 1792, allowFontScaling: true)..init(context);
     return SafeArea(
       top: false,
       child: IntroSlider(

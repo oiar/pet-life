@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_app/splash_widget.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_app/pages/service/components/explore.dart';
 
 class SpaScreen extends StatefulWidget {
@@ -19,8 +21,8 @@ class Screen extends State<SpaScreen> {
                 mainAxisAlignment: MainAxisAlignment.start,
                 children: <Widget>[
                   Container(
-                    child: Text('Near Your Location', style: TextStyle(fontSize: 24.0, fontFamily: 'Signika')),
-                    margin: EdgeInsets.only(bottom: 16.0, top: 10.0, left: 16.0),
+                    child: Text('Near Your Location', style: TextStyle(fontSize: ScreenUtil().setSp(48.0), fontFamily: 'Signika')),
+                    margin: EdgeInsets.only(bottom: ScreenUtil().setWidth(32.0), top: ScreenUtil().setWidth(20.0), left: ScreenUtil().setWidth(32.0)),
                   )
                 ],
               ),
@@ -34,12 +36,12 @@ class Screen extends State<SpaScreen> {
                         Navigator.pushNamed(context, '/article');
                       },
                       child: Card(
-                        margin: EdgeInsets.only(right: 16.0, bottom: 8.0, left: 16.0),
+                        margin: EdgeInsets.only(right: ScreenUtil().setWidth(32.0), bottom: ScreenUtil().setWidth(16.0), left: ScreenUtil().setWidth(32.0)),
                         elevation: 5.0,
                         shape: const RoundedRectangleBorder(borderRadius: BorderRadius.all(Radius.circular(14.0))),
                         child: Container(
-                          width: 280,
-                          height: 220,
+                          width: ScreenUtil().setWidth(560),
+                          height: ScreenUtil().setWidth(440),
                           child: Flex(
                             crossAxisAlignment: CrossAxisAlignment.start,
                             direction: Axis.vertical,
@@ -65,11 +67,11 @@ class Screen extends State<SpaScreen> {
                                   crossAxisAlignment: CrossAxisAlignment.start,
                                   children:[
                                     Container(
-                                      margin: EdgeInsets.only(top: 12.0, left: 16.0, bottom: 8.0),
-                                      child: new Text('Lovely Pet', style: TextStyle(fontSize: 20)),
+                                      margin: EdgeInsets.only(top: ScreenUtil().setWidth(24.0), left: ScreenUtil().setWidth(32.0), bottom: ScreenUtil().setWidth(16.0)),
+                                      child: new Text('Lovely Pet', style: TextStyle(fontSize: ScreenUtil().setSp(40.0))),
                                     ),
                                     Container(
-                                      margin: EdgeInsets.only(left: 16.0),
+                                      margin: EdgeInsets.only(left: ScreenUtil().setWidth(32.0)),
                                       child: new Text('123 Avenue Street, City'),
                                     )
                                   ]
@@ -85,12 +87,12 @@ class Screen extends State<SpaScreen> {
                         Navigator.pushNamed(context, '/article');
                       },
                       child: Card(
-                        margin: EdgeInsets.only(bottom: 8.0),
+                        margin: EdgeInsets.only(bottom: ScreenUtil().setWidth(16.0)),
                         elevation: 5.0,
                         shape: const RoundedRectangleBorder(borderRadius: BorderRadius.all(Radius.circular(14.0))),
                         child: Container(
-                          width: 280,
-                          height: 220,
+                          width: ScreenUtil().setWidth(560),
+                          height: ScreenUtil().setWidth(440),
                           child: Flex(
                             crossAxisAlignment: CrossAxisAlignment.start,
                             direction: Axis.vertical,
@@ -116,11 +118,11 @@ class Screen extends State<SpaScreen> {
                                   crossAxisAlignment: CrossAxisAlignment.start,
                                   children:[
                                     Container(
-                                      margin: EdgeInsets.only(top: 12.0, left: 16.0, bottom: 8.0),
-                                      child: new Text('The Pet Spa', style: TextStyle(fontSize: 20)),
+                                      margin: EdgeInsets.only(top: ScreenUtil().setWidth(24.0), left: ScreenUtil().setWidth(32.0), bottom: ScreenUtil().setWidth(16.0)),
+                                      child: new Text('The Pet Spa', style: TextStyle(fontSize: ScreenUtil().setSp(40.0))),
                                     ),
                                     Container(
-                                      margin: EdgeInsets.only(left: 16.0),
+                                      margin: EdgeInsets.only(left: ScreenUtil().setWidth(32.0)),
                                       child: new Text('123 Avenue Street, City'),
                                     )
                                   ]
@@ -135,8 +137,8 @@ class Screen extends State<SpaScreen> {
                 )
               ),
               Container(
-                child: Text('Explore', style: TextStyle(fontSize: 24, fontFamily: 'Signika')),
-                margin: EdgeInsets.only(bottom: 16.0, top: 16.0, left: 16.0),
+                child: Text('Explore', style: TextStyle(fontSize: ScreenUtil().setSp(48.0), fontFamily: 'Signika')),
+                margin: EdgeInsets.only(bottom: ScreenUtil().setWidth(32.0), top: ScreenUtil().setWidth(32.0), left: ScreenUtil().setWidth(32.0)),
               ),
               Explore()
             ],

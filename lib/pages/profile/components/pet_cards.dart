@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_app/pages/profile/components/optional_card.dart';
 
 class PetCards extends StatefulWidget {
@@ -14,20 +15,20 @@ class Screen extends State<PetCards> {
       children: [
         GestureDetector(
           child: Card(
-            margin: EdgeInsets.only(right: 16.0, left: 20.0, top: 16.0),
+            margin: EdgeInsets.only(right: ScreenUtil().setWidth(32.0), left: ScreenUtil().setWidth(40.0), top: ScreenUtil().setWidth(32.0)),
             elevation: 3.0,
             shape: const RoundedRectangleBorder(borderRadius: BorderRadius.all(Radius.circular(14.0))),
             child: Column(
               children: [
                 Container(
-                  margin: EdgeInsets.all(12.0),
-                  width: 100,
-                  height: 100,
+                  margin: EdgeInsets.all(ScreenUtil().setWidth(24.0)),
+                  width: ScreenUtil().setWidth(200),
+                  height: ScreenUtil().setWidth(200),
                   child: CircleAvatar(backgroundColor: Colors.white, radius: 100, backgroundImage: NetworkImage('http://www.wallpaper-box.com/cat/19201080/images/cat13.jpg')),
                 ),
                 Container(
-                  margin: EdgeInsets.only(bottom: 16.0),
-                  child: Text('Mira', textAlign: TextAlign.center, style: TextStyle(fontSize: 16))
+                  margin: EdgeInsets.only(bottom: ScreenUtil().setWidth(32.0)),
+                  child: Text('Mira', textAlign: TextAlign.center, style: TextStyle(fontSize: ScreenUtil().setSp(32)))
                 )
               ],
             ),
@@ -37,20 +38,20 @@ class Screen extends State<PetCards> {
           },
         ),
         Card(
-          margin: EdgeInsets.only(top: 16.0),
+          margin: EdgeInsets.only(top: ScreenUtil().setWidth(32.0)),
           elevation: 3.0,
           shape: const RoundedRectangleBorder(borderRadius: BorderRadius.all(Radius.circular(14.0))),
           child: Column(
             children: [
               Container(
-                margin: EdgeInsets.all(12.0),
-                width: 100,
-                height: 100,
+                margin: EdgeInsets.all(ScreenUtil().setWidth(24.0)),
+                width: ScreenUtil().setWidth(200),
+                height: ScreenUtil().setWidth(200),
                 child: CircleAvatar(backgroundColor: Colors.white, radius: 100, backgroundImage: NetworkImage('http://www.wallpaper-box.com/cat/images/cat24.jpg')),
               ),
               Container(
-                margin: EdgeInsets.only(bottom: 16.0),
-                child: Text('Min', textAlign: TextAlign.center, style: TextStyle(fontSize: 16))
+                margin: EdgeInsets.only(bottom: ScreenUtil().setWidth(32.0)),
+                child: Text('Min', textAlign: TextAlign.center, style: TextStyle(fontSize: ScreenUtil().setSp(32)))
               )
             ],
           ),
@@ -68,7 +69,7 @@ class Screen extends State<PetCards> {
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(14.0)),
         content: Container(
           width: width,
-          height: height * 2 / 5,
+          height: ScreenUtil().setHeight(800),
           child: OptionalCard()
         )
       )

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_app/pages/profile/components/edit_profile.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_app/pages/service/components/explore_article.dart';
 import 'pages/service/components/article.dart';
 import 'pages/profile/profile.dart';
@@ -53,7 +54,7 @@ class BottomNavigationWidgetState extends State<BottomNavigationWidget> {
             backgroundColor: Colors.white,
             icon: Icon(
               Icons.pets,
-              size: 32,
+              size: 30,
               color: Color(0xFFffc542),
             ),
             title: Text(
@@ -65,7 +66,7 @@ class BottomNavigationWidgetState extends State<BottomNavigationWidget> {
             backgroundColor: Colors.white,
             icon: Icon(
               Icons.schedule,
-              size: 32,
+              size: 30,
               color: Color(0xFFffc542),
             ),
             title: Text(
@@ -77,7 +78,7 @@ class BottomNavigationWidgetState extends State<BottomNavigationWidget> {
             backgroundColor: Colors.white,
             icon: Icon(
               Icons.portrait,
-              size: 32,
+              size: 30,
               color: Color(0xFFffc542),
             ),
             title: Text(

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class OptionalCard extends StatefulWidget {
   @override
@@ -13,9 +14,9 @@ class _OptionalCardState extends State<OptionalCard> {
       children: <Widget>[
         Center(
           child: Container(
-            width: 100,
-            height: 100,
-            margin: EdgeInsets.only(bottom: 32.0),
+            width: ScreenUtil().setWidth(200),
+            height: ScreenUtil().setWidth(200),
+            margin: EdgeInsets.only(bottom: ScreenUtil().setWidth(64.0)),
             child: CircleAvatar(backgroundColor: Colors.white, radius: 100, backgroundImage: NetworkImage('http://www.wallpaper-box.com/cat/19201080/images/cat13.jpg')),
           )
         ),
@@ -24,11 +25,11 @@ class _OptionalCardState extends State<OptionalCard> {
           children: <Widget>[
             Expanded(
               flex: 1,
-              child: Container(margin: EdgeInsets.only(bottom: 16.0), child: Text('Name')),
+              child: Container(margin: EdgeInsets.only(bottom: ScreenUtil().setWidth(32.0)), child: Text('Name', style: TextStyle(fontSize: ScreenUtil().setSp(28)),)),
             ),
             Expanded(
               flex: 1,
-              child: Container(margin: EdgeInsets.only(bottom: 16.0), child: Text('Min')),
+              child: Container(margin: EdgeInsets.only(bottom: ScreenUtil().setWidth(32.0)), child: Text('Min', style: TextStyle(fontSize: ScreenUtil().setSp(28)))),
             )
           ],
         ),
@@ -37,11 +38,11 @@ class _OptionalCardState extends State<OptionalCard> {
           children: <Widget>[
             Expanded(
               flex: 1,
-              child: Container(margin: EdgeInsets.only(bottom: 16.0), child: Text('Species')),
+              child: Container(margin: EdgeInsets.only(bottom: ScreenUtil().setWidth(32.0)), child: Text('Species', style: TextStyle(fontSize: ScreenUtil().setSp(28)))),
             ),
             Expanded(
               flex: 1,
-              child: Container(margin: EdgeInsets.only(bottom: 16.0), child: Text('Cat')),
+              child: Container(margin: EdgeInsets.only(bottom: ScreenUtil().setWidth(32.0)), child: Text('Cat', style: TextStyle(fontSize: ScreenUtil().setSp(28)))),
             )
           ],
         ),
@@ -50,11 +51,11 @@ class _OptionalCardState extends State<OptionalCard> {
           children: <Widget>[
             Expanded(
               flex: 1,
-              child: Container(margin: EdgeInsets.only(bottom: 16.0), child: Text("Pet's birthday")),
+              child: Container(margin: EdgeInsets.only(bottom: ScreenUtil().setWidth(32.0)), child: Text("Pet's birthday", style: TextStyle(fontSize: ScreenUtil().setSp(28)))),
             ),
             Expanded(
               flex: 1,
-              child: Container(margin: EdgeInsets.only(bottom: 16.0), child: Text('16 March 2019')),
+              child: Container(margin: EdgeInsets.only(bottom: ScreenUtil().setWidth(32.0)), child: Text('16 March 2019', style: TextStyle(fontSize: ScreenUtil().setSp(28)))),
             )
           ],
         ),
@@ -63,11 +64,11 @@ class _OptionalCardState extends State<OptionalCard> {
           children: <Widget>[
             Expanded(
               flex: 1,
-              child: Container(margin: EdgeInsets.only(bottom: 16.0), child: Text('Weight')),
+              child: Container(margin: EdgeInsets.only(bottom: ScreenUtil().setWidth(32.0)), child: Text('Weight', style: TextStyle(fontSize: ScreenUtil().setSp(28)))),
             ),
             Expanded(
               flex: 1,
-              child: Container(margin: EdgeInsets.only(bottom: 16.0), child: Text('6 kg')),
+              child: Container(margin: EdgeInsets.only(bottom: ScreenUtil().setWidth(32.0)), child: Text('6 kg', style: TextStyle(fontSize: ScreenUtil().setSp(28)))),
             )
           ],
         ),
@@ -76,11 +77,11 @@ class _OptionalCardState extends State<OptionalCard> {
           children: <Widget>[
             Expanded(
               flex: 1,
-              child: Container(margin: EdgeInsets.only(bottom: 16.0), child: Text('Current health issues')),
+              child: Container(margin: EdgeInsets.only(bottom: ScreenUtil().setWidth(32.0)), child: Text('Current health issues', style: TextStyle(fontSize: ScreenUtil().setSp(28)))),
             ),
             Expanded(
               flex: 1,
-              child: Container(margin: EdgeInsets.only(bottom: 16.0), child: Text('Allergies, Skin Allergies')),
+              child: Container(margin: EdgeInsets.only(bottom: ScreenUtil().setWidth(32.0)), child: Text('Allergies, Skin Allergies', style: TextStyle(fontSize: ScreenUtil().setSp(28)))),
             )
           ],
         ),
@@ -89,11 +90,11 @@ class _OptionalCardState extends State<OptionalCard> {
           children: <Widget>[
             Expanded(
               flex: 1,
-              child: Container(child: Text('Hobbies')),
+              child: Container(child: Text('Hobbies', style: TextStyle(fontSize: ScreenUtil().setSp(28)))),
             ),
             Expanded(
               flex: 1,
-              child: Container(child: Text('Play with ball')),
+              child: Container(child: Text('Play with ball', style: TextStyle(fontSize: ScreenUtil().setSp(28)))),
             )
           ],
         ),

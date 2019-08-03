@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_map/flutter_map.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:latlong/latlong.dart';
 
 class ArticleScreen extends StatefulWidget {
@@ -26,7 +27,7 @@ class Screen extends State<ArticleScreen> {
                   alignment: Alignment(-1.0, -0.6),
                   children: [
                     Container(
-                      height: 230,
+                      height: ScreenUtil().setWidth(460),
                       width: width,
                       decoration: BoxDecoration(
                         image: DecorationImage(
@@ -46,13 +47,13 @@ class Screen extends State<ArticleScreen> {
                   ]
                 ),
                 Container(
-                  padding: EdgeInsets.only(left: 20.0, right: 20.0, top: 20.0, bottom: 8.0),
+                  padding: EdgeInsets.only(left: ScreenUtil().setWidth(40.0), right: ScreenUtil().setWidth(40.0), top: ScreenUtil().setWidth(40.0), bottom: ScreenUtil().setWidth(16.0)),
                   color: Colors.white,
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Container(
-                        child: Text('Lovely Pet', style: TextStyle(fontSize: 26)),
+                        child: Text('Lovely Pet', style: TextStyle(fontSize: ScreenUtil().setSp(52))),
                       ),
                       Flex(
                         crossAxisAlignment: CrossAxisAlignment.start,
@@ -61,19 +62,21 @@ class Screen extends State<ArticleScreen> {
                           Expanded(
                             flex: 2,
                             child: Container(
-                              margin: EdgeInsets.only(top: 10.0),
-                              child: Text('123 Avenue Street, City', style: TextStyle(fontSize: 16)),
+                              margin: EdgeInsets.only(top: ScreenUtil().setWidth(20.0)),
+                              child: Text('123 Avenue Street, City', style: TextStyle(fontSize: ScreenUtil().setSp(32))),
                             )
                           ),
                           Expanded(
                             flex: 1,
                             child: Container(
-                              margin: EdgeInsets.only(bottom: 8.0),
+                              height: ScreenUtil().setWidth(55),
+                              width: ScreenUtil().setWidth(50),
+                              margin: EdgeInsets.only(bottom: ScreenUtil().setWidth(16.0)),
                               child: FlatButton(
                                 shape: RoundedRectangleBorder(borderRadius: BorderRadius.all(Radius.circular(25.0))),
                                 onPressed: () {},
                                 color: Color(0xFFf9c446),
-                                child: Text('Book', style: TextStyle(color: Colors.white, fontSize: 16),),
+                                child: Text('Book', style: TextStyle(color: Colors.white, fontSize: ScreenUtil().setSp(32)),),
                               ),
                             )
                           )
@@ -83,63 +86,63 @@ class Screen extends State<ArticleScreen> {
                   )
                 ),
                 Card(
-                  margin: EdgeInsets.all(16.0),
+                  margin: EdgeInsets.all(ScreenUtil().setWidth(32.0)),
                   shape: const RoundedRectangleBorder(borderRadius: BorderRadius.all(Radius.circular(14.0))),
                   child: Container(
                     width: width * 12 / 13,
-                    padding: EdgeInsets.all(16.0),
+                    padding: EdgeInsets.all(ScreenUtil().setWidth(32.0)),
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: <Widget>[
                         Container(
-                          child: Text('Hours', style: TextStyle(fontSize: 22.0),),
+                          child: Text('Hours', style: TextStyle(fontSize: ScreenUtil().setSp(44)),),
                         ),
                         Container(
-                          margin: EdgeInsets.only(top: 16.0, left: 16.0),
-                          child: Text('Monday-Friday 9AM-7PM*', style: TextStyle(fontSize: 16.0),),
+                          margin: EdgeInsets.only(top: ScreenUtil().setWidth(32.0), left: ScreenUtil().setWidth(32.0)),
+                          child: Text('Monday-Friday 9AM-7PM*', style: TextStyle(fontSize: ScreenUtil().setSp(32)),),
                         ),
                         Container(
-                          margin: EdgeInsets.only(top: 14.0, left: 16.0),
-                          child: Text('Saturdays 9AM to 6PM*', style: TextStyle(fontSize: 16.0),),
+                          margin: EdgeInsets.only(top: ScreenUtil().setWidth(28.0), left: ScreenUtil().setWidth(32.0)),
+                          child: Text('Saturdays 9AM to 6PM*', style: TextStyle(fontSize: ScreenUtil().setSp(32)),),
                         ),
                         Container(
-                          margin: EdgeInsets.only(top: 14.0, left: 16.0, bottom: 8.0),
-                          child: Text('Sundays 10AM to 5PM*', style: TextStyle(fontSize: 16.0),)
+                          margin: EdgeInsets.only(top: ScreenUtil().setWidth(28.0), left: ScreenUtil().setWidth(32.0), bottom: ScreenUtil().setWidth(16.0)),
+                          child: Text('Sundays 10AM to 5PM*', style: TextStyle(fontSize: ScreenUtil().setSp(32)),)
                         )
                       ],
                     ),
                   )
                 ),
                 Card(
-                  margin: EdgeInsets.only(left: 16.0, right: 16.0, bottom: 16.0),
+                  margin: EdgeInsets.only(left: ScreenUtil().setWidth(32.0), right: ScreenUtil().setWidth(32.0), bottom: ScreenUtil().setWidth(32.0)),
                   shape: const RoundedRectangleBorder(borderRadius: BorderRadius.all(Radius.circular(14.0))),
                   child: Container(
                     width: width * 12 / 13,
-                    padding: EdgeInsets.all(16.0),
+                    padding: EdgeInsets.all(ScreenUtil().setWidth(32.0)),
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: <Widget>[
                         Container(
-                          child: Text('Service', style: TextStyle(fontSize: 22.0),),
+                          child: Text('Service', style: TextStyle(fontSize: ScreenUtil().setSp(44)),),
                         ),
                         Container(
-                          margin: EdgeInsets.only(top: 16.0, left: 16.0),
-                          child: Text('Pet Grooming', style: TextStyle(fontSize: 16.0),),
+                          margin: EdgeInsets.only(top: ScreenUtil().setWidth(32.0), left: ScreenUtil().setWidth(32.0)),
+                          child: Text('Pet Grooming', style: TextStyle(fontSize: ScreenUtil().setSp(32)),),
                         ),
                         Container(
-                          margin: EdgeInsets.only(top: 14.0, left: 16.0),
-                          child: Text('Pet sitting and walking', style: TextStyle(fontSize: 16.0),),
+                          margin: EdgeInsets.only(top: ScreenUtil().setWidth(28.0), left: ScreenUtil().setWidth(32.0)),
+                          child: Text('Pet sitting and walking', style: TextStyle(fontSize: ScreenUtil().setSp(32)),),
                         ),
                         Container(
-                          margin: EdgeInsets.only(top: 14.0, left: 16.0, bottom: 8.0),
-                          child: Text('Pet Spa and Bathing option', style: TextStyle(fontSize: 16.0),)
+                          margin: EdgeInsets.only(top: ScreenUtil().setWidth(28.0), left: ScreenUtil().setWidth(32.0), bottom: ScreenUtil().setWidth(16.0)),
+                          child: Text('Pet Spa and Bathing option', style: TextStyle(fontSize: ScreenUtil().setSp(32)),)
                         )
                       ],
                     ),
                   )
                 ),
                 Card(
-                  margin: EdgeInsets.only(left: 16.0, right: 16.0, bottom: 16.0),
+                  margin: EdgeInsets.only(left: ScreenUtil().setWidth(32.0), right: ScreenUtil().setWidth(32.0), bottom: ScreenUtil().setWidth(32.0)),
                   shape: const RoundedRectangleBorder(borderRadius: BorderRadius.all(Radius.circular(14.0))),
                   child: Container(
                     width: width * 12 / 13,
@@ -152,8 +155,8 @@ class Screen extends State<ArticleScreen> {
                             Expanded(
                               flex: 5,
                               child: Container(
-                                padding: EdgeInsets.all(16.0),
-                                child: Text('Location', style: TextStyle(fontSize: 22.0)),
+                                padding: EdgeInsets.all(ScreenUtil().setWidth(32.0)),
+                                child: Text('Location', style: TextStyle(fontSize: ScreenUtil().setSp(44))),
                               )
                             ),
                             Expanded(
@@ -165,7 +168,7 @@ class Screen extends State<ArticleScreen> {
                           ]
                         ),
                         SizedBox(
-                          height: 300,
+                          height: ScreenUtil().setWidth(600),
                           child: FlutterMap(
                             options: new MapOptions(
                               center: LatLng(51.5, -0.09),
@@ -181,12 +184,12 @@ class Screen extends State<ArticleScreen> {
                               new MarkerLayerOptions(
                                 markers: [
                                   new Marker(
-                                    width: 80.0,
-                                    height: 80.0,
+                                    width: ScreenUtil().setWidth(160),
+                                    height: ScreenUtil().setWidth(160),
                                     point: new LatLng(51.5, -0.09),
                                     builder: (ctx) =>
                                     new Container(
-                                      child: Icon(Icons.location_on, size: 40.0, color: Color(0xFFf9c446)),
+                                      child: Icon(Icons.location_on, size: ScreenUtil().setWidth(80.0), color: Color(0xFFf9c446)),
                                     ),
                                   ),
                                 ],

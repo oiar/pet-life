@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart' show DateFormat;
 import 'package:datetime_picker_formfield/datetime_picker_formfield.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class IconBottomSheet extends StatefulWidget {
   @override
@@ -18,7 +19,7 @@ class Screen extends State<IconBottomSheet> {
   @override
   Widget build(BuildContext context) {
     return new IconButton(
-      icon: Icon(Icons.add_circle_outline, size: 32.0, color: Color(0xFF646465)),
+      icon: Icon(Icons.add_circle_outline, size: ScreenUtil().setWidth(64.0), color: Color(0xFF646465)),
       onPressed: () => {
         showModalBottomSheet<String>(
           context: context,
@@ -39,9 +40,9 @@ class Screen extends State<IconBottomSheet> {
                       Expanded(
                         flex: 1,
                         child: Container(
-                          margin: EdgeInsets.only(top: 8.0),
+                          margin: EdgeInsets.only(top: ScreenUtil().setWidth(16.0)),
                           child: FlatButton(
-                            child: const Icon(Icons.navigate_before, size: 36.0, color: Color(0xFFcfcfcf),),
+                            child: Icon(Icons.navigate_before, size: ScreenUtil().setWidth(72.0), color: Color(0xFFcfcfcf),),
                             onPressed: () {
                               Navigator.pop(context);
                             },
@@ -51,23 +52,23 @@ class Screen extends State<IconBottomSheet> {
                       Expanded(
                         flex: 5,
                         child: Container(
-                          margin: EdgeInsets.only(top: 8.0, left: 54.0),
-                          child: Text('Add schedule', style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold))
+                          margin: EdgeInsets.only(top: ScreenUtil().setWidth(16.0), left: ScreenUtil().setWidth(108.0)),
+                          child: Text('Add schedule', style: TextStyle(fontSize: ScreenUtil().setSp(48), fontWeight: FontWeight.bold))
                         )
                       )
                     ]
                   ),
                   Container(
-                    padding: EdgeInsets.only(right: 36.0, left: 36.0),
+                    padding: EdgeInsets.only(right: ScreenUtil().setWidth(72.0), left: ScreenUtil().setWidth(72.0)),
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Container(
-                          margin: EdgeInsets.only(top: 8.0),
-                          child: Text('Date', style: TextStyle(fontSize: 20)),
+                          margin: EdgeInsets.only(top: ScreenUtil().setWidth(16.0)),
+                          child: Text('Date', style: TextStyle(fontSize: ScreenUtil().setSp(40))),
                         ),
                         Container(
-                          margin: EdgeInsets.only(top: 8.0),
+                          margin: EdgeInsets.only(top: ScreenUtil().setWidth(16.0)),
                           child: DateTimePickerFormField(
                             textAlign: TextAlign.center,
                             cursorColor: Color(0xFFffc542),
@@ -76,10 +77,10 @@ class Screen extends State<IconBottomSheet> {
                             inputType: InputType.date,
                             format: formats[InputType.date],
                             decoration: InputDecoration(
-                              icon: Icon(Icons.date_range, size: 32),
-                              enabledBorder: const OutlineInputBorder(
-                                borderSide: const BorderSide(color: Color(0xFFfef7ec), width: 0.0),
-                                borderRadius: const BorderRadius.all(Radius.circular(50.0))
+                              icon: Icon(Icons.date_range, size: ScreenUtil().setWidth(64)),
+                              enabledBorder: OutlineInputBorder(
+                                borderSide: BorderSide(color: Color(0xFFfef7ec), width: 0.0),
+                                borderRadius: BorderRadius.all(Radius.circular(50.0))
                               ),
                               filled: true,
                               fillColor: Color(0xFFfef7ec),
@@ -87,11 +88,11 @@ class Screen extends State<IconBottomSheet> {
                           ),
                         ),
                         Container(
-                          margin: EdgeInsets.only(top: 8.0),
-                          child: Text('Time', style: TextStyle(fontSize: 20)),
+                          margin: EdgeInsets.only(top: ScreenUtil().setWidth(16.0)),
+                          child: Text('Time', style: TextStyle(fontSize: ScreenUtil().setSp(40))),
                         ),
                         Container(
-                          margin: EdgeInsets.only(top: 8.0),
+                          margin: EdgeInsets.only(top: 16.0),
                           child: DateTimePickerFormField(
                             editable: false,
                             textAlign: TextAlign.center,
@@ -100,31 +101,31 @@ class Screen extends State<IconBottomSheet> {
                             onChanged: (dt) => setState(() => date = dt),
                             inputType: InputType.time,
                             format: formats[InputType.time],
-                            decoration: const InputDecoration(
-                              icon: Icon(Icons.timer, size: 32),
+                            decoration: InputDecoration(
+                              icon: Icon(Icons.timer, size: ScreenUtil().setWidth(64)),
                               filled: true,
                               fillColor: Color(0xFFfef7ec),
-                              enabledBorder: const OutlineInputBorder(
-                                borderSide: const BorderSide(color: Color(0xFFfef7ec), width: 0.0),
-                                borderRadius: const BorderRadius.all(Radius.circular(50.0))
+                              enabledBorder: OutlineInputBorder(
+                                borderSide: BorderSide(color: Color(0xFFfef7ec), width: 0.0),
+                                borderRadius: BorderRadius.all(Radius.circular(50.0))
                               ),
                             ),
                           )
                         ),
                         Container(
-                          margin: EdgeInsets.only(top: 8.0),
-                          child: Text('Note', style: TextStyle(fontSize: 20)),
+                          margin: EdgeInsets.only(top: ScreenUtil().setWidth(16.0)),
+                          child: Text('Note', style: TextStyle(fontSize: ScreenUtil().setSp(40))),
                         ),
                         Container(
-                          margin: EdgeInsets.only(top: 8.0),
+                          margin: EdgeInsets.only(top: ScreenUtil().setWidth(16.0)),
                           child: TextFormField(
                             cursorColor: Color(0xFFffc542),
                             maxLines: 3,
-                            decoration: const InputDecoration(
+                            decoration: InputDecoration(
                               filled: true,
                               fillColor: Color(0xFFfef7ec),
-                              enabledBorder: const OutlineInputBorder(
-                                borderSide: const BorderSide(color: Color(0xFFfef7ec), width: 0.0),
+                              enabledBorder: OutlineInputBorder(
+                                borderSide: BorderSide(color: Color(0xFFfef7ec), width: 0.0),
                               ),
                             ),
                           )
@@ -133,15 +134,15 @@ class Screen extends State<IconBottomSheet> {
                     )
                   ),
                   Container(
-                    margin: EdgeInsets.only(top: 16.0),
+                    margin: EdgeInsets.only(top: ScreenUtil().setWidth(32.0)),
                     child: Container(
-                      height: 46.0,
-                      padding: EdgeInsets.only(left: 80.0, right: 80.0),
+                      height: ScreenUtil().setWidth(92),
+                      padding: EdgeInsets.only(left: ScreenUtil().setWidth(160.0), right: ScreenUtil().setWidth(160.0)),
                       child: FlatButton(
-                        shape: const RoundedRectangleBorder(borderRadius: BorderRadius.all(Radius.circular(50.0))),
+                        shape: RoundedRectangleBorder(borderRadius: BorderRadius.all(Radius.circular(50.0))),
                         onPressed: () {},
                         color: Color(0xFFffc542),
-                        child: Text('Add', style: TextStyle(color: Colors.white, fontSize: 20),),
+                        child: Text('Add', style: TextStyle(color: Colors.white, fontSize: ScreenUtil().setSp(40)),),
                       )
                     )
                   )

@@ -19,10 +19,6 @@ class MyApp extends StatelessWidget {
         ),
       )
     );
-    // return new MaterialApp(
-    //   // theme: ThemeData(fontFamily: 'Signika'),
-    //   home: BottomNavigation(),
-    // );
   }
 }
 

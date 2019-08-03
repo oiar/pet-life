@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_calendar_carousel/flutter_calendar_carousel.dart' show CalendarCarousel;
 import 'package:flutter_calendar_carousel/classes/event.dart';
 import 'package:flutter_calendar_carousel/classes/event_list.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class CalenderScreen extends StatefulWidget {
   @override
@@ -55,10 +56,10 @@ class Screen extends State<CalenderScreen> {
           elevation: 5.0,
           shape: const RoundedRectangleBorder(borderRadius: BorderRadius.all(Radius.circular(14.0))),
           child: Container(
-            width: width * 10 / 11,
-            padding: EdgeInsets.only(left: 32.0, right: 32.0, bottom: 16.0),
+            width: width * 9 / 10,
+            padding: EdgeInsets.only(left: ScreenUtil().setWidth(64.0), right: ScreenUtil().setWidth(64.0), bottom: ScreenUtil().setWidth(32.0)),
             child: CalendarCarousel(
-              headerMargin: EdgeInsets.only(top: 16.0, bottom: 8.0),
+              headerMargin: EdgeInsets.only(top: ScreenUtil().setWidth(32.0), bottom: ScreenUtil().setWidth(16.0)),
               markedDatesMap: _markedDateMap,
               onDayPressed: (DateTime date, List<Event> events) {
                 this.setState(() => refresh(date));
@@ -73,19 +74,18 @@ class Screen extends State<CalenderScreen> {
               todayButtonColor: Color(0xFFF9C446),
               headerTextStyle: TextStyle(
                 color: Color(0xFFF9C446),
-                fontSize: 20
+                fontSize: ScreenUtil().setSp(40)
               ),
-              height: 320.0,
-              width: 300.0,
+              height: ScreenUtil().setWidth(650),
             ),
           )
         ),
         Card(
-          margin: EdgeInsets.only(left: 16.0, right: 16.0, top: 16.0),
+          margin: EdgeInsets.only(left: ScreenUtil().setWidth(32.0), right: ScreenUtil().setWidth(32.0), top: ScreenUtil().setWidth(32.0)),
           elevation: 1.0,
           shape: const RoundedRectangleBorder(borderRadius: BorderRadius.all(Radius.circular(14.0))),
           child: Container(
-            height: 90,
+            height: ScreenUtil().setWidth(180),
             child: Flex(
               direction: Axis.horizontal,
               children: [
@@ -96,7 +96,7 @@ class Screen extends State<CalenderScreen> {
                       child: Text(
                         '10 May',
                         textAlign: TextAlign.center,
-                        style: TextStyle(color: Color(0xFFF9C446), fontSize: 16.0)
+                        style: TextStyle(color: Color(0xFFF9C446), fontSize: ScreenUtil().setSp(32))
                       )
                     )
                   )
@@ -104,26 +104,27 @@ class Screen extends State<CalenderScreen> {
                 Expanded(
                   flex: 2,
                     child: Container(
-                    margin: EdgeInsets.only(left: 5.0, right: 5.0, top: 5.0, bottom: 5.0),
+                    margin: EdgeInsets.all(ScreenUtil().setWidth(10.0)),
                     child: Text(
                       calendarText,
+                      style: TextStyle(fontSize: ScreenUtil().setWidth(28)),
                     ),
                   )
                 ),
                 Expanded(
                   flex: 1,
                   child: Card(
-                    margin: EdgeInsets.only(right: 16.0, left: 8.0),
+                    margin: EdgeInsets.only(right: ScreenUtil().setWidth(32.0), left: ScreenUtil().setWidth(16.0)),
                     shape: const RoundedRectangleBorder(borderRadius: BorderRadius.all(Radius.circular(14.0))),
                     color: Color(0xFFF9C446),
                     child: Container(
-                      width: 70,
-                      height: 70,
+                      width: ScreenUtil().setWidth(140),
+                      height: ScreenUtil().setWidth(140),
                       child: Center(
                         child: Text(
                           '9:00',
                           textAlign: TextAlign.center,
-                          style: TextStyle(color: Colors.white, fontSize: 20.0)
+                          style: TextStyle(color: Colors.white, fontSize: ScreenUtil().setSp(40))
                         )
                       )
                     ),
@@ -134,11 +135,11 @@ class Screen extends State<CalenderScreen> {
           )
         ),
         Card(
-          margin: EdgeInsets.only(left: 16.0, right: 16.0, top: 16.0),
+          margin: EdgeInsets.only(left: ScreenUtil().setWidth(32.0), right: ScreenUtil().setWidth(32.0), top: ScreenUtil().setWidth(32.0)),
           elevation: 1.0,
           shape: const RoundedRectangleBorder(borderRadius: BorderRadius.all(Radius.circular(14.0))),
           child: Container(
-            height: 90,
+            height: ScreenUtil().setWidth(180),
             child: Flex(
               direction: Axis.horizontal,
               children: [
@@ -149,7 +150,7 @@ class Screen extends State<CalenderScreen> {
                       child: Text(
                         '10 May',
                         textAlign: TextAlign.center,
-                        style: TextStyle(color: Color(0xFFF9C446), fontSize: 16.0)
+                        style: TextStyle(color: Color(0xFFF9C446), fontSize: ScreenUtil().setSp(32))
                       )
                     )
                   )
@@ -157,26 +158,27 @@ class Screen extends State<CalenderScreen> {
                 Expanded(
                   flex: 2,
                     child: Container(
-                    margin: EdgeInsets.only(left: 5.0, right: 5.0, top: 5.0, bottom: 5.0),
+                    margin: EdgeInsets.all(ScreenUtil().setWidth(5.0)),
                     child: Text(
                       calendarText,
+                      style: TextStyle(fontSize: ScreenUtil().setWidth(28)),
                     ),
                   )
                 ),
                 Expanded(
                   flex: 1,
                   child: Card(
-                    margin: EdgeInsets.only(right: 16.0, left: 8.0),
+                    margin: EdgeInsets.only(right: ScreenUtil().setWidth(32.0), left: ScreenUtil().setWidth(16.0)),
                     shape: const RoundedRectangleBorder(borderRadius: BorderRadius.all(Radius.circular(14.0))),
                     color: Color(0xFFF9C446),
                     child: Container(
-                      width: 70,
-                      height: 70,
+                      width: ScreenUtil().setWidth(140),
+                      height: ScreenUtil().setWidth(140),
                       child: Center(
                         child: Text(
                           '15:00',
                           textAlign: TextAlign.center,
-                          style: TextStyle(color: Colors.white, fontSize: 20.0)
+                          style: TextStyle(color: Colors.white, fontSize: ScreenUtil().setSp(40))
                         )
                       )
                     ),
