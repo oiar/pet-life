@@ -1,6 +1,8 @@
+import 'dart:io';
 import 'dart:ui';
 
 import 'package:flutter/material.dart';
+import 'package:image_picker/image_picker.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class EditProfile extends StatefulWidget {
@@ -8,6 +10,15 @@ class EditProfile extends StatefulWidget {
   Screen createState() => Screen();
 }
 class Screen extends State<EditProfile> {
+  File _image;
+
+  Future getImage() async {
+    var image = await ImagePicker.pickImage(source: ImageSource.gallery);
+
+    setState(() {
+      _image = image;
+    });
+  }
   @override
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
@@ -52,21 +63,23 @@ class Screen extends State<EditProfile> {
                       Container(
                         height: ScreenUtil().setWidth(600),
                         width: width,
-                        decoration: BoxDecoration(
-                          image: DecorationImage(
-                            image: AssetImage('lib/assets/images/mira.jpg'),
-                            fit: BoxFit.cover
-                          ),
-                        ),
+                        child: _image == null
+                              ? defaultBackImage
+                              : backImage(_image),
                       ),
                       BackdropFilter(
                         filter: new ImageFilter.blur(sigmaX: 10, sigmaY: 10),
                         child: Center(
-                          child: Container(
-                            margin: EdgeInsets.only(top: ScreenUtil().setWidth(200.0)),
-                            width: ScreenUtil().setWidth(240),
-                            height: ScreenUtil().setWidth(240),
-                            child: CircleAvatar(backgroundColor: Colors.white, radius: 100, backgroundImage: AssetImage('lib/assets/images/mira.jpg'))
+                          child: GestureDetector(
+                            onTap: getImage,
+                            child: Container(
+                              margin: EdgeInsets.only(top: ScreenUtil().setWidth(200.0)),
+                              width: ScreenUtil().setWidth(240),
+                              height: ScreenUtil().setWidth(240),
+                              child: _image == null
+                                    ? defaultImage
+                                    : circleImage(_image)
+                            )
                           )
                         ),
                       ),
@@ -80,8 +93,8 @@ class Screen extends State<EditProfile> {
                         TextField(
                           cursorColor: Color(0xFFffc542),
                           decoration: InputDecoration(
-                            enabledBorder: UnderlineInputBorder(borderSide: BorderSide(width: 0.1)),
-                            focusedBorder: UnderlineInputBorder(borderSide: BorderSide(width: 0.5, color: Color(0xFFffc542))),
+                            enabledBorder: UnderlineInputBorder(borderSide: BorderSide(width: ScreenUtil().setWidth(0.2))),
+                            focusedBorder: UnderlineInputBorder(borderSide: BorderSide(width: ScreenUtil().setWidth(1.0), color: Color(0xFFffc542))),
                             labelText: 'Name',
                             labelStyle: TextStyle(fontSize: ScreenUtil().setSp(28))
                           ),
@@ -89,8 +102,8 @@ class Screen extends State<EditProfile> {
                         TextField(
                           cursorColor: Color(0xFFffc542),
                           decoration: InputDecoration(
-                            enabledBorder: UnderlineInputBorder(borderSide: BorderSide(width: 0.1)),
-                            focusedBorder: UnderlineInputBorder(borderSide: BorderSide(width: 0.5, color: Color(0xFFffc542))),
+                            enabledBorder: UnderlineInputBorder(borderSide: BorderSide(width: ScreenUtil().setWidth(0.2))),
+                            focusedBorder: UnderlineInputBorder(borderSide: BorderSide(width: ScreenUtil().setWidth(1.0), color: Color(0xFFffc542))),
                             labelText: 'Address',
                             labelStyle: TextStyle(fontSize: ScreenUtil().setSp(28))
                           ),
@@ -98,8 +111,8 @@ class Screen extends State<EditProfile> {
                         TextField(
                           cursorColor: Color(0xFFffc542),
                           decoration: InputDecoration(
-                            enabledBorder: UnderlineInputBorder(borderSide: BorderSide(width: 0.1)),
-                            focusedBorder: UnderlineInputBorder(borderSide: BorderSide(width: 0.5, color: Color(0xFFffc542))),
+                            enabledBorder: UnderlineInputBorder(borderSide: BorderSide(width: ScreenUtil().setWidth(0.2))),
+                            focusedBorder: UnderlineInputBorder(borderSide: BorderSide(width: ScreenUtil().setWidth(1.0), color: Color(0xFFffc542))),
                             labelText: 'Phone',
                             labelStyle: TextStyle(fontSize: ScreenUtil().setSp(28))
                           ),
@@ -107,8 +120,8 @@ class Screen extends State<EditProfile> {
                         TextField(
                           cursorColor: Color(0xFFffc542),
                           decoration: InputDecoration(
-                            enabledBorder: UnderlineInputBorder(borderSide: BorderSide(width: 0.1)),
-                            focusedBorder: UnderlineInputBorder(borderSide: BorderSide(width: 0.5, color: Color(0xFFffc542))),
+                            enabledBorder: UnderlineInputBorder(borderSide: BorderSide(width: ScreenUtil().setWidth(0.2))),
+                            focusedBorder: UnderlineInputBorder(borderSide: BorderSide(width: ScreenUtil().setWidth(1.0), color: Color(0xFFffc542))),
                             labelText: 'Name',
                             labelStyle: TextStyle(fontSize: ScreenUtil().setSp(28))
                           ),
@@ -122,6 +135,52 @@ class Screen extends State<EditProfile> {
           )
         ),
       )
+    );
+  }
+  Widget defaultImage = Stack(
+    children: <Widget>[
+      Align(
+        alignment: Alignment.topLeft,
+        child: CircleAvatar(backgroundColor: Colors.white, radius: 100, backgroundImage: AssetImage('lib/assets/images/mira.jpg')),
+      ),
+      Align(
+        alignment: Alignment.bottomRight,
+        child: Image.asset(
+          'lib/assets/images/edit.png',
+          fit: BoxFit.contain,
+          height: ScreenUtil().setWidth(90),
+          width: ScreenUtil().setWidth(90),
+        ),
+      )
+    ],
+  );
+  Widget defaultBackImage = Container(
+    child: Image.asset('lib/assets/images/mira.jpg', 
+      fit: BoxFit.cover
+    )
+  );
+  Widget circleImage(File image) {
+    return Stack(
+      children: <Widget>[
+        Container(
+          child: ClipOval(
+            child: Image.file(
+              image,
+              fit: BoxFit.cover,
+              height: ScreenUtil().setWidth(240),
+              width: ScreenUtil().setWidth(240),
+            ),
+          )
+        )
+      ],
+    );
+  }
+  Widget backImage(File image) {
+    return Container(
+      child: Image.file(
+        image,
+        fit: BoxFit.cover,
+      ),
     );
   }
 }

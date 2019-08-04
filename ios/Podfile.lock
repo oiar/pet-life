@@ -13,6 +13,8 @@ PODS:
   - GoogleMaps/Base (2.7.0)
   - GoogleMaps/Maps (2.7.0):
     - GoogleMaps/Base
+  - image_picker (0.0.1):
+    - Flutter
   - intro_slider (0.0.1):
     - Flutter
   - path_provider (0.0.1):
@@ -27,6 +29,7 @@ DEPENDENCIES:
   - audioplayers (from `.symlinks/plugins/audioplayers/ios`)
   - Flutter (from `.symlinks/flutter/ios`)
   - google_maps_flutter (from `.symlinks/plugins/google_maps_flutter/ios`)
+  - image_picker (from `.symlinks/plugins/image_picker/ios`)
   - intro_slider (from `.symlinks/plugins/intro_slider/ios`)
   - path_provider (from `.symlinks/plugins/path_provider/ios`)
   - shared_preferences (from `.symlinks/plugins/shared_preferences/ios`)
@@ -44,6 +47,8 @@ EXTERNAL SOURCES:
     :path: ".symlinks/flutter/ios"
   google_maps_flutter:
     :path: ".symlinks/plugins/google_maps_flutter/ios"
+  image_picker:
+    :path: ".symlinks/plugins/image_picker/ios"
   intro_slider:
     :path: ".symlinks/plugins/intro_slider/ios"
   path_provider:
@@ -59,6 +64,7 @@ SPEC CHECKSUMS:
   FMDB: 2ce00b547f966261cd18927a3ddb07cb6f3db82a
   google_maps_flutter: 78a52114c898b42ea647919679a4c58b70abe876
   GoogleMaps: f79af95cb24d869457b1f961c93d3ce8b2f3b848
+  image_picker: 16e5fec1fbc87fd3b297c53e4048521eaf17cd06
   intro_slider: 85847639533bfd8e898d76844e0aa2cf412ee190
   path_provider: f96fff6166a8867510d2c25fdcc346327cc4b259
   shared_preferences: 1feebfa37bb57264736e16865e7ffae7fc99b523
