@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_app/pages/profile/components/pet_cards.dart';
 import 'package:flutter_app/pages/profile/components/reward.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:flutter_app/pages/profile/components/add_bottom_sheet.dart';
 
 class ProfileScreen extends StatefulWidget {
   @override
@@ -107,7 +108,7 @@ class Screen extends State<ProfileScreen> {
                           flex: 1,
                           child: Container(
                             margin: EdgeInsets.only(top: ScreenUtil().setWidth(16.0)),
-                            child: new Icon(Icons.add_circle_outline, color: Color(0xFF646465), size: ScreenUtil().setWidth(64.0)),
+                            child: AddBottomSheet(),
                           )
                         )
                       ],

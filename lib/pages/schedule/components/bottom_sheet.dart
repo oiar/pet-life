@@ -22,16 +22,18 @@ class Screen extends State<IconBottomSheet> {
       icon: Icon(Icons.add_circle_outline, size: ScreenUtil().setWidth(64.0), color: Color(0xFF646465)),
       onPressed: () => {
         showModalBottomSheet<String>(
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.only(topLeft: Radius.circular(14.0), topRight: Radius.circular(14.0)),
+          ),
           context: context,
           builder: (BuildContext context) => Theme(
             data: ThemeData(
               primaryColor: Color(0xFFffc542),
               accentColor: Color(0xFFffc542),
               textSelectionColor: Color(0xFFffc542),
-              focusColor: Color(0xFFffc542)
+              focusColor: Color(0xFFffc542),
             ),
             child: Container(
-              color: Colors.white,
               child: ListView(
                 children: <Widget>[
                   Flex(
@@ -52,7 +54,7 @@ class Screen extends State<IconBottomSheet> {
                       Expanded(
                         flex: 5,
                         child: Container(
-                          margin: EdgeInsets.only(top: ScreenUtil().setWidth(16.0), left: ScreenUtil().setWidth(108.0)),
+                          margin: EdgeInsets.only(top: ScreenUtil().setWidth(16.0), left: ScreenUtil().setWidth(110.0)),
                           child: Text('Add schedule', style: TextStyle(fontSize: ScreenUtil().setSp(48), fontWeight: FontWeight.bold))
                         )
                       )
