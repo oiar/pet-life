@@ -22,6 +22,7 @@ class Screen extends State<IconBottomSheet> {
       icon: Icon(Icons.add_circle_outline, size: ScreenUtil().setWidth(64.0), color: Color(0xFF646465)),
       onPressed: () => {
         showModalBottomSheet<String>(
+          backgroundColor: Colors.white,
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.only(topLeft: Radius.circular(14.0), topRight: Radius.circular(14.0)),
           ),
@@ -67,9 +68,10 @@ class Screen extends State<IconBottomSheet> {
                       children: [
                         Container(
                           margin: EdgeInsets.only(top: ScreenUtil().setWidth(16.0)),
-                          child: Text('Date', style: TextStyle(fontSize: ScreenUtil().setSp(40))),
+                          child: Text('Date', style: TextStyle(fontSize: ScreenUtil().setSp(36.0))),
                         ),
                         Container(
+                          height: ScreenUtil().setWidth(92),
                           margin: EdgeInsets.only(top: ScreenUtil().setWidth(16.0)),
                           child: DateTimePickerFormField(
                             textAlign: TextAlign.center,
@@ -91,9 +93,10 @@ class Screen extends State<IconBottomSheet> {
                         ),
                         Container(
                           margin: EdgeInsets.only(top: ScreenUtil().setWidth(16.0)),
-                          child: Text('Time', style: TextStyle(fontSize: ScreenUtil().setSp(40))),
+                          child: Text('Time', style: TextStyle(fontSize: ScreenUtil().setSp(36.0))),
                         ),
                         Container(
+                          height: ScreenUtil().setWidth(92),
                           margin: EdgeInsets.only(top: 16.0),
                           child: DateTimePickerFormField(
                             editable: false,
@@ -116,7 +119,7 @@ class Screen extends State<IconBottomSheet> {
                         ),
                         Container(
                           margin: EdgeInsets.only(top: ScreenUtil().setWidth(16.0)),
-                          child: Text('Note', style: TextStyle(fontSize: ScreenUtil().setSp(40))),
+                          child: Text('Note', style: TextStyle(fontSize: ScreenUtil().setSp(36.0))),
                         ),
                         Container(
                           margin: EdgeInsets.only(top: ScreenUtil().setWidth(16.0)),
@@ -144,7 +147,7 @@ class Screen extends State<IconBottomSheet> {
                         shape: RoundedRectangleBorder(borderRadius: BorderRadius.all(Radius.circular(50.0))),
                         onPressed: () {},
                         color: Color(0xFFffc542),
-                        child: Text('Add', style: TextStyle(color: Colors.white, fontSize: ScreenUtil().setSp(40)),),
+                        child: Text('Add', style: TextStyle(color: Colors.white, fontSize: ScreenUtil().setSp(40.0)),),
                       )
                     )
                   )

@@ -160,15 +160,29 @@ class Screen extends State<EditProfile> {
     )
   );
   Widget circleImage(File image) {
-    return Container(
-      child: ClipOval(
-        child: Image.file(
-          image,
-          fit: BoxFit.cover,
-          height: ScreenUtil().setWidth(240),
-          width: ScreenUtil().setWidth(240),
+    return Stack(
+      children: [
+        Align(
+          alignment: Alignment.topLeft,
+          child: ClipOval(
+            child: Image.file(
+              image,
+              fit: BoxFit.cover,
+              height: ScreenUtil().setWidth(240),
+              width: ScreenUtil().setWidth(240),
+            ),
+          )
         ),
-      )
+        Align(
+          alignment: Alignment.bottomRight,
+          child: Image.asset(
+            'lib/assets/images/edit.png',
+            fit: BoxFit.contain,
+            height: ScreenUtil().setWidth(90),
+            width: ScreenUtil().setWidth(90),
+          ),
+        )
+      ]
     );
   }
   Widget backImage(File image) {

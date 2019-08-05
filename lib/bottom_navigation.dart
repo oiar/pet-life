@@ -51,6 +51,7 @@ class BottomNavigationWidgetState extends State<BottomNavigationWidget> {
         backgroundColor: Colors.white,
         items: [
           BottomNavigationBarItem(
+            backgroundColor: Colors.white,
             icon: Icon(
               Icons.pets,
               size: ScreenUtil().setWidth(60),
@@ -62,6 +63,7 @@ class BottomNavigationWidgetState extends State<BottomNavigationWidget> {
             )
           ),
           BottomNavigationBarItem(
+            backgroundColor: Colors.white,
             icon: Icon(
               Icons.schedule,
               size: ScreenUtil().setWidth(60),
@@ -73,6 +75,7 @@ class BottomNavigationWidgetState extends State<BottomNavigationWidget> {
             )
           ),
           BottomNavigationBarItem(
+            backgroundColor: Colors.white,
             icon: Icon(
               Icons.portrait,
               size: ScreenUtil().setWidth(60),
