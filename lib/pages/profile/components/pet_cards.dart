@@ -59,10 +59,10 @@ class Screen extends State<PetCards> {
       ],
     );
   }
+
   void showAlertDialog(BuildContext context) {
     final size = MediaQuery.of(context).size;
     final width = size.width;
-    final height = size.height;
     showDialog(
       context: context,
       builder: (BuildContext context) => AlertDialog(
