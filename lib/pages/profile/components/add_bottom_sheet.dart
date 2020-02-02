@@ -182,7 +182,7 @@ class Screen extends State<AddBottomSheet> {
                           margin: EdgeInsets.only(left: ScreenUtil().setWidth(16.0), right: ScreenUtil().setWidth(16.0)),
                           child: DateTimePickerFormField(
                             textAlign: TextAlign.center,
-                            cursorColor: Color(0xFFffc542),
+                            // cursorColor: Color(0xFFffc542),
                             editable: false,
                             onChanged: (dt) => setState(() => date = dt),
                             inputType: InputType.date,

@@ -22,7 +22,7 @@ dependencies:
   intro_slider: ^2.2.5
   shared_preferences: ^0.5.3+4
   google_maps_flutter: ^0.5.20+1
-  flutter_map: ^0.7.0+1
+  flutter_map: ^0.8.2
   audioplayers: ^0.12.1
   archive: ^2.0.8
   path_provider: ^1.1.0

@@ -75,7 +75,7 @@ class Screen extends State<IconBottomSheet> {
                           margin: EdgeInsets.only(top: ScreenUtil().setWidth(16.0)),
                           child: DateTimePickerFormField(
                             textAlign: TextAlign.center,
-                            cursorColor: Color(0xFFffc542),
+                            // cursorColor: Color(0xFFffc542),
                             editable: false,
                             onChanged: (dt) => setState(() => date = dt),
                             inputType: InputType.date,
@@ -101,7 +101,7 @@ class Screen extends State<IconBottomSheet> {
                           child: DateTimePickerFormField(
                             editable: false,
                             textAlign: TextAlign.center,
-                            cursorColor: Color(0xFFffc542),
+                            // cursorColor: Color(0xFFffc542),
                             controller: TextEditingController(),
                             onChanged: (dt) => setState(() => date = dt),
                             inputType: InputType.time,
