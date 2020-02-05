@@ -12,9 +12,9 @@ class AddBottomSheet extends StatefulWidget {
 
 class Screen extends State<AddBottomSheet> {
   DateTime date;
-  final formats = {
-    InputType.date: DateFormat('EEEE, MMM d'),
-  };
+  // final formats = {
+  //   InputType.date: DateFormat('EEEE, MMM d'),
+  // };
 
   String dropdownValue = 'Cat';
   File _image;
@@ -177,26 +177,26 @@ class Screen extends State<AddBottomSheet> {
                           margin: EdgeInsets.only(left: ScreenUtil().setWidth(16.0), right: ScreenUtil().setWidth(16.0), top: ScreenUtil().setWidth(16.0), bottom: ScreenUtil().setWidth(32.0)),
                           child: Text("Pet's birthday: ", style: TextStyle(fontSize: ScreenUtil().setSp(36.0)))
                         ),
-                        Container(
-                          height: ScreenUtil().setWidth(92),
-                          margin: EdgeInsets.only(left: ScreenUtil().setWidth(16.0), right: ScreenUtil().setWidth(16.0)),
-                          child: DateTimePickerFormField(
-                            textAlign: TextAlign.center,
-                            // cursorColor: Color(0xFFffc542),
-                            editable: false,
-                            onChanged: (dt) => setState(() => date = dt),
-                            inputType: InputType.date,
-                            format: formats[InputType.date],
-                            decoration: InputDecoration(
-                              enabledBorder: OutlineInputBorder(
-                                borderSide: BorderSide(color: Color(0xFFfef7ec), width: 0.0),
-                                borderRadius: BorderRadius.all(Radius.circular(50.0))
-                              ),
-                              filled: true,
-                              fillColor: Color(0xFFfef7ec),
-                            ),
-                          ),
-                        ),
+                        // Container(
+                        //   height: ScreenUtil().setWidth(92),
+                        //   margin: EdgeInsets.only(left: ScreenUtil().setWidth(16.0), right: ScreenUtil().setWidth(16.0)),
+                        //   child: DateTimePickerFormField(
+                        //     textAlign: TextAlign.center,
+                        //     // cursorColor: Color(0xFFffc542),
+                        //     editable: false,
+                        //     onChanged: (dt) => setState(() => date = dt),
+                        //     inputType: InputType.date,
+                        //     format: formats[InputType.date],
+                        //     decoration: InputDecoration(
+                        //       enabledBorder: OutlineInputBorder(
+                        //         borderSide: BorderSide(color: Color(0xFFfef7ec), width: 0.0),
+                        //         borderRadius: BorderRadius.all(Radius.circular(50.0))
+                        //       ),
+                        //       filled: true,
+                        //       fillColor: Color(0xFFfef7ec),
+                        //     ),
+                        //   ),
+                        // ),
                       ],
                     ),
                   ),

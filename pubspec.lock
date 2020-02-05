@@ -98,7 +98,7 @@ packages:
       name: datetime_picker_formfield
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "0.2.0"
+    version: "1.0.0"
   english_words:
     dependency: "direct main"
     description:

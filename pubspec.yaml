@@ -30,7 +30,7 @@ dependencies:
   sqflite:
   flutter_date_picker: 
   flutter_datetime_picker:
-  datetime_picker_formfield: ^0.2.0
+  datetime_picker_formfield: ^1.0.0
   flutter_calendar_carousel: ^1.3.18
   flutter:
     sdk: flutter
