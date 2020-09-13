@@ -32,6 +32,7 @@ class Screen extends State<IconBottomSheet> {
               textSelectionColor: Color(0xFFffc542),
               focusColor: Color(0xFFffc542),
               buttonColor: Color(0xFFffc542),
+              splashColor: Color(0xFFffc542),
             ),
             child: Form(
               key: _formkey,
@@ -166,7 +167,7 @@ class Screen extends State<IconBottomSheet> {
                           shape: RoundedRectangleBorder(borderRadius: BorderRadius.all(Radius.circular(50.0))),
                           onPressed: () {
                             if(_formkey.currentState.validate()) {
-                              Scaffold.of(context).showSnackBar(SnackBar(content: Text('Processing Data')));
+                              _formkey.currentState.save();
                             }
                           },
                           color: Color(0xFFffc542),
