@@ -1,7 +1,49 @@
+import 'dart:convert';
+import 'dart:io';
+
 import 'package:flutter/material.dart';
+import 'package:flutter_app/pages/profile/components/admin_login.dart';
 import 'package:intl/intl.dart' show DateFormat;
 import 'package:datetime_picker_formfield/datetime_picker_formfield.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:http/http.dart' as http;
+
+Future<Schedule> createSchedule(String date, time, note) async {
+  String token = await Admin().getToken();
+
+  final http.Response response = await http.post(
+    'http://127.0.0.1:8000/api/v1/schedule/create',
+    headers: <String, String>{
+      'Content-Type': 'application/json; charset=UTF-8',
+      'Authorization': 'Bearer $token',
+    },
+    body: jsonEncode(<String, String>{
+      'date': date,
+      'time': time,
+      'note': note,
+    }),
+  );
+  print('Token : $token');
+
+  if (response.statusCode == 200) {
+    return Schedule.fromJson(jsonDecode(response.body));
+  } else {
+    throw Exception('Failed to create schedule.');
+  }
+}
+
+class Schedule {
+  final int scheduleId, status;
+
+  Schedule({this.scheduleId, this.status});
+
+  factory Schedule.fromJson(Map<String, dynamic> json) {
+    return Schedule(
+      scheduleId: json['ID'],
+      status: json['status'],
+    );
+  }
+}
 
 class IconBottomSheet extends StatefulWidget {
   @override
@@ -13,6 +55,11 @@ class Screen extends State<IconBottomSheet> {
   
   final dateFormat = DateFormat("EEEE, MMM d");
   final timeFormat = DateFormat("HH:mm");
+
+  final TextEditingController _dateController = TextEditingController();
+  final TextEditingController _timeController = TextEditingController();
+  final TextEditingController _noteController = TextEditingController();
+  Future<Schedule> _futureSchedule;
 
   @override
   Widget build(BuildContext context) {
@@ -34,7 +81,8 @@ class Screen extends State<IconBottomSheet> {
               buttonColor: Color(0xFFffc542),
               splashColor: Color(0xFFffc542),
             ),
-            child: Form(
+            child: (_futureSchedule == null)
+            ? Form(
               key: _formkey,
               child: Container(
                 child: ListView(
@@ -76,6 +124,7 @@ class Screen extends State<IconBottomSheet> {
                             height: ScreenUtil().setWidth(92),
                             margin: EdgeInsets.only(top: ScreenUtil().setWidth(16.0)),
                             child: DateTimeField(
+                              controller: _dateController,
                               textAlign: TextAlign.center,
                               cursorColor: Color(0xFFffc542),
                               format: dateFormat,
@@ -92,6 +141,7 @@ class Screen extends State<IconBottomSheet> {
                                 ),
                               ),
                               validator: (value) {
+                                // ignore: unrelated_type_equality_checks
                                 if (value == "") {
                                   return 'Please enter some text';
                                 }
@@ -107,6 +157,7 @@ class Screen extends State<IconBottomSheet> {
                             height: ScreenUtil().setWidth(92),
                             margin: EdgeInsets.only(top: 16.0),
                             child: DateTimeField(
+                              controller: _timeController,
                               textAlign: TextAlign.center,
                               cursorColor: Color(0xFFffc542),
                               format: timeFormat,
@@ -124,6 +175,7 @@ class Screen extends State<IconBottomSheet> {
                                 )
                               ),
                               validator: (value) {
+                                // ignore: unrelated_type_equality_checks
                                 if (value == "") {
                                   return 'Please enter some text';
                                 }
@@ -138,6 +190,7 @@ class Screen extends State<IconBottomSheet> {
                           Container(
                             margin: EdgeInsets.only(top: ScreenUtil().setWidth(16.0)),
                             child: TextFormField(
+                              controller: _noteController,
                               cursorColor: Color(0xFFffc542),
                               maxLines: 3,
                               decoration: InputDecoration(
@@ -166,9 +219,12 @@ class Screen extends State<IconBottomSheet> {
                         child: FlatButton(
                           shape: RoundedRectangleBorder(borderRadius: BorderRadius.all(Radius.circular(50.0))),
                           onPressed: () {
-                            if(_formkey.currentState.validate()) {
-                              _formkey.currentState.save();
-                            }
+                            setState(() {
+                              _futureSchedule = createSchedule(_dateController.text, _timeController.text, _noteController.text);
+                            });
+                            // if(_formkey.currentState.validate()) {
+                            //   _formkey.currentState.save();
+                            // }
                           },
                           color: Color(0xFFffc542),
                           child: Text('Add', style: TextStyle(color: Colors.white, fontSize: ScreenUtil().setSp(40.0)),),
@@ -179,10 +235,20 @@ class Screen extends State<IconBottomSheet> {
                 ),
               )
             )
+            : FutureBuilder<Schedule>(
+                future: _futureSchedule,
+                builder: (context, snapshot) {
+                  if (snapshot.hasData) {
+                    return Text("${snapshot.data.scheduleId}");
+                  } else if (snapshot.hasError) {
+                    return Text("${snapshot.error}");
+                  }
+                  return CircularProgressIndicator();
+                },
+              )
           ),
         ),
       },
     );
   }
-  
 }

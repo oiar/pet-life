@@ -3,13 +3,14 @@ import 'package:flutter_app/pages/profile/components/pet_cards.dart';
 import 'package:flutter_app/pages/profile/components/reward.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_app/pages/profile/components/add_bottom_sheet.dart';
+import 'package:flutter_secure_storage/flutter_secure_storage.dart';
 
 class ProfileScreen extends StatefulWidget {
   @override
   Screen createState() => Screen();
 }
 
-class Screen extends State<ProfileScreen> {
+class Screen extends State<ProfileScreen> {  
   @override
   Widget build(BuildContext context) {
     return new MaterialApp(

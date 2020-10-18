@@ -22,7 +22,7 @@ class MyApp extends StatelessWidget {
   }
 }
 
-class RestartWidget  extends StatefulWidget {
+class RestartWidget extends StatefulWidget {
   final Widget child;
 
   RestartWidget({Key key, @required this.child})

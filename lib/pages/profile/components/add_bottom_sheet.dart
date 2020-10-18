@@ -20,6 +20,7 @@ class Screen extends State<AddBottomSheet> {
   File _image;
 
   Future getImage() async {
+    // ignore: deprecated_member_use
     var image = await ImagePicker.pickImage(source: ImageSource.gallery);
 
     setState(() {

@@ -17,6 +17,7 @@ environment:
   sdk: ">=2.2.0 <3.0.0"
 
 dependencies:
+  flutter_secure_storage: ^3.3.5
   image_picker: ^0.6.1
   flutter_screenutil: ^0.5.3
   intro_slider: ^2.2.5

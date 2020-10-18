@@ -5,20 +5,25 @@ import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
+enum WhyFarther { harder, smarter, selfStarter, tradingCharter }
+
 class EditProfile extends StatefulWidget {
   @override
   Screen createState() => Screen();
 }
+
 class Screen extends State<EditProfile> {
   File _image;
 
   Future getImage() async {
+    // ignore: deprecated_member_use
     var image = await ImagePicker.pickImage(source: ImageSource.gallery);
 
     setState(() {
       _image = image;
     });
   }
+  
   @override
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
@@ -35,19 +40,39 @@ class Screen extends State<EditProfile> {
           iconTheme: IconThemeData(color: Colors.white),
           actions: <Widget>[
             Container(
-              margin: EdgeInsets.only(right: ScreenUtil().setWidth(16.0)),
               child: Center(
                 child: Text(
                   'Save',
                   style: TextStyle(
-                    fontSize: ScreenUtil().setWidth(46.0),
+                    fontSize: ScreenUtil().setWidth(42.0),
                     color: Colors.white
                   ),
                 )
               )
+            ),
+            Container(
+              margin: EdgeInsets.only(right: ScreenUtil().setWidth(16.0)),
+              child: Center(
+                // child: Icon(Icons.more_vert),
+                child: PopupMenuButton<WhyFarther>(
+                  onSelected: (WhyFarther result) { setState(() {}); },
+                  itemBuilder: (BuildContext context) => <PopupMenuEntry<WhyFarther>>[
+                    PopupMenuItem<WhyFarther>(
+                      value: WhyFarther.harder,
+                      child: FlatButton(
+                        child: Text('Logout'),
+                        onPressed: () => {
+                          Navigator.pushNamed(context, '/admin_login')
+                        },
+                      )
+                    ),
+                  ],
+                )
+              ),
             )
           ],
-          title: Text('Edit', style: TextStyle(fontSize: ScreenUtil().setSp(54), color: Colors.white)),
+          // titleSpacing: ScreenUtil().setWidth(0.0),
+          title: Text('Edit profile', style: TextStyle(fontSize: ScreenUtil().setWidth(52.0), color: Colors.white)),
           backgroundColor: Color(0xFFffc542),
         ),
         backgroundColor: Color(0xFFFEF1D4),

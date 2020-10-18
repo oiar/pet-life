@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_app/pages/profile/components/admin_login.dart';
 import 'package:flutter_app/pages/profile/components/edit_profile.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_app/pages/service/components/explore_article.dart';
@@ -19,6 +20,7 @@ class BottomNavigation extends StatelessWidget {
         '/article': (BuildContext context) => ArticleScreen(),
         '/explore_article': (BuildContext context) => ExploreArticle(),
         '/edit_profile': (BuildContext context) => EditProfile(),
+        '/admin_login': (BuildContext context) => AdminLogin(),
       }
     );
   }
